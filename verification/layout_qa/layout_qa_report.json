@@ -1,0 +1,210 @@
+{
+ "report": {
+  "Home": {
+   "md_tables": 1,
+   "html_tables": 1,
+   "headings": [
+    [
+     "1",
+     "Arkansas 2022 vs 2026 Governor Race: ΔG Method (proxy version)"
+    ],
+    [
+     "2",
+     "Contents"
+    ],
+    [
+     "2",
+     "Statewide at a glance"
+    ],
+    [
+     "2",
+     "County results in brief"
+    ],
+    [
+     "2",
+     "Verification: two independent passes over the raw SOS files"
+    ],
+    [
+     "2",
+     "Read this before using the numbers"
+    ]
+   ],
+   "banner_chars": 312
+  },
+  "Reverse-Math": {
+   "md_tables": 5,
+   "html_tables": 5,
+   "headings": [
+    [
+     "1",
+     "Bottom-Up Reverse Math"
+    ],
+    [
+     "2",
+     "Step 1: Dallas County (the ceiling county)"
+    ],
+    [
+     "2",
+     "Step 2: the six largest counties"
+    ],
+    [
+     "2",
+     "Step 3: all 75 counties"
+    ],
+    [
+     "2",
+     "Residual step: the 23 counties that lost Democratic primary voters"
+    ],
+    [
+     "2",
+     "Solving backward: implied extra votes (hypothesis)"
+    ],
+    [
+     "2",
+     "What the arithmetic cannot tell you"
+    ],
+    [
+     "2",
+     "Full county table (75 counties, largest to smallest population)"
+    ]
+   ],
+   "banner_chars": 312
+  },
+  "Locked-Arkansas-Formula": {
+   "md_tables": 4,
+   "html_tables": 4,
+   "headings": [
+    [
+     "1",
+     "Locked Arkansas Formula"
+    ],
+    [
+     "2",
+     "Arkansas fitted equation (final)"
+    ],
+    [
+     "2",
+     "The equation"
+    ],
+    [
+     "3",
+     "Why this proxy"
+    ],
+    [
+     "2",
+     "Blank template"
+    ],
+    [
+     "2",
+     "Worked example: Dallas (ceiling county, lost Democratic primary voters)"
+    ],
+    [
+     "2",
+     "Arkansas-only constants (forward fit)"
+    ],
+    [
+     "2",
+     "Rules for using this formula"
+    ]
+   ],
+   "banner_chars": 312
+  },
+  "Floor-and-Ceiling": {
+   "md_tables": 6,
+   "html_tables": 6,
+   "headings": [
+    [
+     "1",
+     "Floor and Ceiling Counties"
+    ],
+    [
+     "2",
+     "How to read floor and ceiling counties"
+    ],
+    [
+     "2",
+     "Terminology"
+    ],
+    [
+     "2",
+     "Ceiling and floor detail"
+    ],
+    [
+     "2",
+     "Regional constants"
+    ],
+    [
+     "2",
+     "Counties narrowed out of the fit"
+    ],
+    [
+     "2",
+     "Over-ballot check"
+    ],
+    [
+     "2",
+     "Data sources"
+    ]
+   ],
+   "banner_chars": 312
+  },
+  "Graphs": {
+   "md_tables": 0,
+   "html_tables": 0,
+   "headings": [
+    [
+     "1",
+     "Graphs"
+    ],
+    [
+     "2",
+     "1. Slope chart: G, 2022 → 2026"
+    ],
+    [
+     "2",
+     "2. ΔG by county, population order"
+    ],
+    [
+     "2",
+     "3. What ΔG is made of: ΔS vs ΔP"
+    ],
+    [
+     "2",
+     "4. Democratic share of ballots and the proxy, population order"
+    ],
+    [
+     "2",
+     "5. Forward fit: Arkansas-only constants"
+    ],
+    [
+     "2",
+     "6. ΔG vs ΔP"
+    ],
+    [
+     "2",
+     "7. Regional constants"
+    ],
+    [
+     "2",
+     "8. Over-ballot check"
+    ],
+    [
+     "2",
+     "Data behind the charts"
+    ]
+   ],
+   "banner_chars": 312,
+   "images": [
+    "https://raw.githubusercontent.com/mbenson8989/Arkansas-Election-Analysis/main/AR_Slope_G2022_to_G2026.png",
+    "https://raw.githubusercontent.com/mbenson8989/Arkansas-Election-Analysis/main/AR_DeltaG_by_Population.png",
+    "https://raw.githubusercontent.com/mbenson8989/Arkansas-Election-Analysis/main/AR_DeltaG_Components_dS_vs_dP_by_Population.png",
+    "https://raw.githubusercontent.com/mbenson8989/Arkansas-Election-Analysis/main/AR_Stacked_Share_and_Proxy_by_Population.png",
+    "https://raw.githubusercontent.com/mbenson8989/Arkansas-Election-Analysis/main/AR_Forward_Fit_G_vs_P_2022_2026.png",
+    "https://raw.githubusercontent.com/mbenson8989/Arkansas-Election-Analysis/main/AR_DeltaG_vs_DeltaP_Scatter.png",
+    "https://raw.githubusercontent.com/mbenson8989/Arkansas-Election-Analysis/main/AR_Regional_Fits.png",
+    "https://raw.githubusercontent.com/mbenson8989/Arkansas-Election-Analysis/main/AR_Overballot_Check_by_Population.png"
+   ]
+  }
+ },
+ "issues": []
+}

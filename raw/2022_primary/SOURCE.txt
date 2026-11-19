@@ -1,0 +1,8 @@
+Arkansas Secretary of State election results (arkansas.tally-enr.com), election ID 1843
+Viewer: https://arkansas.tally-enr.com/#election=1843
+https://results.tally-enr.com/results/arkansas/1843/FullDataFile.json  http=200 bytes=27088037 retrieved=2026-11-19T12:14:46-06:00
+https://enr-results-api.totalresults.com/Election/GetElectionInfo?cId=arkansas&electionID=1843  http=200 bytes=50882 retrieved=2026-11-19T12:14:46-06:00
+https://enr-results-api.totalresults.com/Contest/GetContestSearchList?cid=arkansas&electionID=1843  http=200 bytes=91225 retrieved=2026-11-19T12:14:46-06:00
+https://enr-results-api.totalresults.com/Turnout/GetTurnout?cId=arkansas&electionID=1843  http=200 bytes=3824 retrieved=2026-11-19T12:14:46-06:00
+https://enr-results-api.totalresults.com/Contest/GetContestResults?cId=arkansas&electionID=1843&contestType=STW  http=200 bytes=33610 retrieved=2026-11-19T12:14:46-06:00
+https://enr-results-api.totalresults.com/Contest/GetContestResults?cId=arkansas&electionID=1843&contestType=FED  http=200 bytes=18442 retrieved=2026-11-19T12:14:47-06:00

@@ -1,0 +1,75 @@
+{
+ "statewide": {
+  "2022": {
+   "gov": {
+    "Republican Party": 572005,
+    "Democratic Party": 319657,
+    "": 16716
+   },
+   "ballots": 914227,
+   "reg": 1799136,
+   "official": true
+  },
+  "2022_primary": {
+   "gov_dem": 88240,
+   "gov_rep": 348416,
+   "sen_dem": 92126,
+   "sen_rep": 348081,
+   "ballots": 457856,
+   "reg": 1762024,
+   "official": true
+  },
+  "2026": {
+   "gov": {
+    "Democratic": 343057,
+    "Libertarian": 67025,
+    "Republican": 477996
+   },
+   "ballots": 895505,
+   "reg": 1856404,
+   "official_flag": true
+  },
+  "2026_primary": {
+   "gov_dem": 129245,
+   "gov_rep": null,
+   "sen_dem": 130683,
+   "sen_rep": 281973,
+   "ballots": 437247,
+   "reg": 1802792,
+   "official_flag": true
+  }
+ },
+ "county_sum_equals_statewide": {
+  "2026_gov_precinct_sum_equals_county_rows": true,
+  "2026p_precinct_sum_equals_county_rows": true,
+  "2022": {
+   "dem": true,
+   "rep": true,
+   "govtotal": true,
+   "ballots": true,
+   "reg": true
+  },
+  "2022_primary": {
+   "gov_dem": true,
+   "sen_dem": true,
+   "sen_rep": true,
+   "ballots": true,
+   "reg": true,
+   "gov_rep": true
+  },
+  "2026": {
+   "dem": true,
+   "rep": true,
+   "govtotal": true,
+   "ballots": true,
+   "reg": true
+  },
+  "2026_primary": {
+   "gov_dem": true,
+   "sen_dem": true,
+   "sen_rep": true,
+   "ballots": true,
+   "reg": true
+  }
+ }
+}

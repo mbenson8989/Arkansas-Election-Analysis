@@ -1,0 +1,477 @@
+{
+ "counties": 75,
+ "figures_per_county": 23,
+ "total_comparisons": 1725,
+ "matched": 1709,
+ "mismatched": 16,
+ "mismatch_counties": [
+  "Conway",
+  "White"
+ ],
+ "mismatch_elections": [
+  "2022"
+ ],
+ "mismatches": [
+  {
+   "county": "Conway",
+   "figure": "dem_2022",
+   "passA": 2309,
+   "passB": 2176,
+   "diff": 133
+  },
+  {
+   "county": "Conway",
+   "figure": "rep_2022",
+   "passA": 4535,
+   "passB": 4481,
+   "diff": 54
+  },
+  {
+   "county": "Conway",
+   "figure": "other_2022",
+   "passA": 108,
+   "passB": 107,
+   "diff": 1
+  },
+  {
+   "county": "Conway",
+   "figure": "govtotal_2022",
+   "passA": 6952,
+   "passB": 6764,
+   "diff": 188
+  },
+  {
+   "county": "Conway",
+   "figure": "prim_dem_2022",
+   "passA": 980,
+   "passB": 883,
+   "diff": 97
+  },
+  {
+   "county": "Conway",
+   "figure": "prim_rep_2022",
+   "passA": 2772,
+   "passB": 2749,
+   "diff": 23
+  },
+  {
+   "county": "Conway",
+   "figure": "prim_demsen_2022",
+   "passA": 1072,
+   "passB": 964,
+   "diff": 108
+  },
+  {
+   "county": "Conway",
+   "figure": "prim_repsen_2022",
+   "passA": 2783,
+   "passB": 2760,
+   "diff": 23
+  },
+  {
+   "county": "White",
+   "figure": "dem_2022",
+   "passA": 4895,
+   "passB": 4613,
+   "diff": 282
+  },
+  {
+   "county": "White",
+   "figure": "rep_2022",
+   "passA": 18856,
+   "passB": 18010,
+   "diff": 846
+  },
+  {
+   "county": "White",
+   "figure": "other_2022",
+   "passA": 527,
+   "passB": 502,
+   "diff": 25
+  },
+  {
+   "county": "White",
+   "figure": "govtotal_2022",
+   "passA": 24278,
+   "passB": 23125,
+   "diff": 1153
+  },
+  {
+   "county": "White",
+   "figure": "prim_dem_2022",
+   "passA": 1063,
+   "passB": 982,
+   "diff": 81
+  },
+  {
+   "county": "White",
+   "figure": "prim_rep_2022",
+   "passA": 11860,
+   "passB": 11354,
+   "diff": 506
+  },
+  {
+   "county": "White",
+   "figure": "prim_demsen_2022",
+   "passA": 1169,
+   "passB": 1083,
+   "diff": 86
+  },
+  {
+   "county": "White",
+   "figure": "prim_repsen_2022",
+   "passA": 11851,
+   "passB": 11349,
+   "diff": 502
+  }
+ ],
+ "mismatches_in_analysis_figures": [
+  {
+   "county": "Conway",
+   "figure": "dem_2022",
+   "passA": 2309,
+   "passB": 2176,
+   "diff": 133
+  },
+  {
+   "county": "Conway",
+   "figure": "rep_2022",
+   "passA": 4535,
+   "passB": 4481,
+   "diff": 54
+  },
+  {
+   "county": "Conway",
+   "figure": "other_2022",
+   "passA": 108,
+   "passB": 107,
+   "diff": 1
+  },
+  {
+   "county": "Conway",
+   "figure": "govtotal_2022",
+   "passA": 6952,
+   "passB": 6764,
+   "diff": 188
+  },
+  {
+   "county": "Conway",
+   "figure": "prim_demsen_2022",
+   "passA": 1072,
+   "passB": 964,
+   "diff": 108
+  },
+  {
+   "county": "Conway",
+   "figure": "prim_repsen_2022",
+   "passA": 2783,
+   "passB": 2760,
+   "diff": 23
+  },
+  {
+   "county": "White",
+   "figure": "dem_2022",
+   "passA": 4895,
+   "passB": 4613,
+   "diff": 282
+  },
+  {
+   "county": "White",
+   "figure": "rep_2022",
+   "passA": 18856,
+   "passB": 18010,
+   "diff": 846
+  },
+  {
+   "county": "White",
+   "figure": "other_2022",
+   "passA": 527,
+   "passB": 502,
+   "diff": 25
+  },
+  {
+   "county": "White",
+   "figure": "govtotal_2022",
+   "passA": 24278,
+   "passB": 23125,
+   "diff": 1153
+  },
+  {
+   "county": "White",
+   "figure": "prim_demsen_2022",
+   "passA": 1169,
+   "passB": 1083,
+   "diff": 86
+  },
+  {
+   "county": "White",
+   "figure": "prim_repsen_2022",
+   "passA": 11851,
+   "passB": 11349,
+   "diff": 502
+  }
+ ],
+ "comparisons_2026": 825,
+ "matched_2026": 825,
+ "comparisons_outside_mismatch_counties": 1679,
+ "matched_outside_mismatch_counties": 1679,
+ "wikipedia_2022_general_check": {
+  "figures": 300,
+  "disagree_with_passA": 8,
+  "disagree_with_passB": 0
+ },
+ "statewide_third_source_check": {
+  "prim_rep_2022": {
+   "wikipedia": 347887,
+   "passA_sum": 348416,
+   "passB_sum": 347887,
+   "passB_equals_wikipedia": true,
+   "passA_minus_wikipedia": 529,
+   "sum_of_county_mismatches": 529
+  },
+  "prim_dem_2022": {
+   "wikipedia": 94472,
+   "passA_sum": 88240,
+   "passB_sum": 88062,
+   "passB_equals_wikipedia": false,
+   "passA_minus_wikipedia": -6232,
+   "sum_of_county_mismatches": 178
+  },
+  "prim_demsen_2022": {
+   "wikipedia": 91932,
+   "passA_sum": 92126,
+   "passB_sum": 91932,
+   "passB_equals_wikipedia": true,
+   "passA_minus_wikipedia": 194,
+   "sum_of_county_mismatches": 194
+  },
+  "prim_repsen_2022": {
+   "wikipedia": 347556,
+   "passA_sum": 348081,
+   "passB_sum": 347556,
+   "passB_equals_wikipedia": true,
+   "passA_minus_wikipedia": 525,
+   "sum_of_county_mismatches": 525
+  },
+  "prim_demsen_2026": {
+   "wikipedia": 130683,
+   "passA_sum": 130683,
+   "passB_sum": 130683,
+   "passB_equals_wikipedia": true,
+   "passA_minus_wikipedia": 0,
+   "sum_of_county_mismatches": 0
+  },
+  "prim_repsen_2026": {
+   "wikipedia": 281973,
+   "passA_sum": 281973,
+   "passB_sum": 281973,
+   "passB_equals_wikipedia": true,
+   "passA_minus_wikipedia": 0,
+   "sum_of_county_mismatches": 0
+  },
+  "prim_dem_2026": {
+   "wikipedia": 129245,
+   "passA_sum": 129245,
+   "passB_sum": 129245,
+   "passB_equals_wikipedia": true,
+   "passA_minus_wikipedia": 0,
+   "sum_of_county_mismatches": 0
+  }
+ },
+ "adjudication": [
+  {
+   "county": "Conway",
+   "figure": "dem_2022",
+   "passA": 2309,
+   "passB": 2176,
+   "diff": 133,
+   "passA_gov_total_vs_ballots": "6,952 governor votes vs 6,820 ballots in the same file (IMPOSSIBLE)",
+   "wikipedia": 2176,
+   "wikipedia_agrees_with": "passB",
+   "resolved_for": "passB"
+  },
+  {
+   "county": "Conway",
+   "figure": "rep_2022",
+   "passA": 4535,
+   "passB": 4481,
+   "diff": 54,
+   "passA_gov_total_vs_ballots": "6,952 governor votes vs 6,820 ballots in the same file (IMPOSSIBLE)",
+   "wikipedia": 4481,
+   "wikipedia_agrees_with": "passB",
+   "resolved_for": "passB"
+  },
+  {
+   "county": "Conway",
+   "figure": "other_2022",
+   "passA": 108,
+   "passB": 107,
+   "diff": 1,
+   "passA_gov_total_vs_ballots": "6,952 governor votes vs 6,820 ballots in the same file (IMPOSSIBLE)",
+   "wikipedia": 107,
+   "wikipedia_agrees_with": "passB",
+   "resolved_for": "passB"
+  },
+  {
+   "county": "Conway",
+   "figure": "govtotal_2022",
+   "passA": 6952,
+   "passB": 6764,
+   "diff": 188,
+   "passA_gov_total_vs_ballots": "6,952 governor votes vs 6,820 ballots in the same file (IMPOSSIBLE)",
+   "wikipedia": 6764,
+   "wikipedia_agrees_with": "passB",
+   "resolved_for": "passB"
+  },
+  {
+   "county": "Conway",
+   "figure": "prim_dem_2022",
+   "passA": 980,
+   "passB": 883,
+   "diff": 97,
+   "passA_primary_DR_vs_ballots": "3,752 Dem + Rep governor-primary votes vs 3,885 primary ballots in the same file (fits); pass B: 3,632 (fits)",
+   "passA_primary_senate_DR_vs_ballots": "3,855 vs 3,885 (fits)",
+   "statewide_check": "pass B county sum 88,062 vs published statewide 94,472 (DIFFERENT); pass A exceeds published by -6,232 = sum of county mismatches 178",
+   "resolved_for": "UNRESOLVED"
+  },
+  {
+   "county": "Conway",
+   "figure": "prim_rep_2022",
+   "passA": 2772,
+   "passB": 2749,
+   "diff": 23,
+   "passA_primary_DR_vs_ballots": "3,752 Dem + Rep governor-primary votes vs 3,885 primary ballots in the same file (fits); pass B: 3,632 (fits)",
+   "passA_primary_senate_DR_vs_ballots": "3,855 vs 3,885 (fits)",
+   "statewide_check": "pass B county sum 347,887 vs published statewide 347,887 (equal); pass A exceeds published by 529 = sum of county mismatches 529",
+   "resolved_for": "passB"
+  },
+  {
+   "county": "Conway",
+   "figure": "prim_demsen_2022",
+   "passA": 1072,
+   "passB": 964,
+   "diff": 108,
+   "passA_primary_DR_vs_ballots": "3,752 Dem + Rep governor-primary votes vs 3,885 primary ballots in the same file (fits); pass B: 3,632 (fits)",
+   "passA_primary_senate_DR_vs_ballots": "3,855 vs 3,885 (fits)",
+   "statewide_check": "pass B county sum 91,932 vs published statewide 91,932 (equal); pass A exceeds published by 194 = sum of county mismatches 194",
+   "resolved_for": "passB"
+  },
+  {
+   "county": "Conway",
+   "figure": "prim_repsen_2022",
+   "passA": 2783,
+   "passB": 2760,
+   "diff": 23,
+   "passA_primary_DR_vs_ballots": "3,752 Dem + Rep governor-primary votes vs 3,885 primary ballots in the same file (fits); pass B: 3,632 (fits)",
+   "passA_primary_senate_DR_vs_ballots": "3,855 vs 3,885 (fits)",
+   "statewide_check": "pass B county sum 347,556 vs published statewide 347,556 (equal); pass A exceeds published by 525 = sum of county mismatches 525",
+   "resolved_for": "passB"
+  },
+  {
+   "county": "White",
+   "figure": "dem_2022",
+   "passA": 4895,
+   "passB": 4613,
+   "diff": 282,
+   "passA_gov_total_vs_ballots": "24,278 governor votes vs 23,300 ballots in the same file (IMPOSSIBLE)",
+   "wikipedia": 4613,
+   "wikipedia_agrees_with": "passB",
+   "county_certified": 4613,
+   "certified_agrees_with": "passB",
+   "resolved_for": "passB"
+  },
+  {
+   "county": "White",
+   "figure": "rep_2022",
+   "passA": 18856,
+   "passB": 18010,
+   "diff": 846,
+   "passA_gov_total_vs_ballots": "24,278 governor votes vs 23,300 ballots in the same file (IMPOSSIBLE)",
+   "wikipedia": 18010,
+   "wikipedia_agrees_with": "passB",
+   "county_certified": 18010,
+   "certified_agrees_with": "passB",
+   "resolved_for": "passB"
+  },
+  {
+   "county": "White",
+   "figure": "other_2022",
+   "passA": 527,
+   "passB": 502,
+   "diff": 25,
+   "passA_gov_total_vs_ballots": "24,278 governor votes vs 23,300 ballots in the same file (IMPOSSIBLE)",
+   "wikipedia": 502,
+   "wikipedia_agrees_with": "passB",
+   "county_certified": 502,
+   "certified_agrees_with": "passB",
+   "resolved_for": "passB"
+  },
+  {
+   "county": "White",
+   "figure": "govtotal_2022",
+   "passA": 24278,
+   "passB": 23125,
+   "diff": 1153,
+   "passA_gov_total_vs_ballots": "24,278 governor votes vs 23,300 ballots in the same file (IMPOSSIBLE)",
+   "wikipedia": 23125,
+   "wikipedia_agrees_with": "passB",
+   "resolved_for": "passB"
+  },
+  {
+   "county": "White",
+   "figure": "prim_dem_2022",
+   "passA": 1063,
+   "passB": 982,
+   "diff": 81,
+   "passA_primary_DR_vs_ballots": "12,923 Dem + Rep governor-primary votes vs 12,665 primary ballots in the same file (IMPOSSIBLE); pass B: 12,336 (fits)",
+   "passA_primary_senate_DR_vs_ballots": "13,020 vs 12,665 (IMPOSSIBLE)",
+   "statewide_check": "pass B county sum 88,062 vs published statewide 94,472 (DIFFERENT); pass A exceeds published by -6,232 = sum of county mismatches 178",
+   "resolved_for": "passB"
+  },
+  {
+   "county": "White",
+   "figure": "prim_rep_2022",
+   "passA": 11860,
+   "passB": 11354,
+   "diff": 506,
+   "passA_primary_DR_vs_ballots": "12,923 Dem + Rep governor-primary votes vs 12,665 primary ballots in the same file (IMPOSSIBLE); pass B: 12,336 (fits)",
+   "passA_primary_senate_DR_vs_ballots": "13,020 vs 12,665 (IMPOSSIBLE)",
+   "statewide_check": "pass B county sum 347,887 vs published statewide 347,887 (equal); pass A exceeds published by 529 = sum of county mismatches 529",
+   "resolved_for": "passB"
+  },
+  {
+   "county": "White",
+   "figure": "prim_demsen_2022",
+   "passA": 1169,
+   "passB": 1083,
+   "diff": 86,
+   "passA_primary_DR_vs_ballots": "12,923 Dem + Rep governor-primary votes vs 12,665 primary ballots in the same file (IMPOSSIBLE); pass B: 12,336 (fits)",
+   "passA_primary_senate_DR_vs_ballots": "13,020 vs 12,665 (IMPOSSIBLE)",
+   "statewide_check": "pass B county sum 91,932 vs published statewide 91,932 (equal); pass A exceeds published by 194 = sum of county mismatches 194",
+   "resolved_for": "passB"
+  },
+  {
+   "county": "White",
+   "figure": "prim_repsen_2022",
+   "passA": 11851,
+   "passB": 11349,
+   "diff": 502,
+   "passA_primary_DR_vs_ballots": "12,923 Dem + Rep governor-primary votes vs 12,665 primary ballots in the same file (IMPOSSIBLE); pass B: 12,336 (fits)",
+   "passA_primary_senate_DR_vs_ballots": "13,020 vs 12,665 (IMPOSSIBLE)",
+   "statewide_check": "pass B county sum 347,556 vs published statewide 347,556 (equal); pass A exceeds published by 525 = sum of county mismatches 525",
+   "resolved_for": "passB"
+  }
+ ],
+ "all_analysis_mismatches_resolved_for_passB": true,
+ "unresolved": [
+  [
+   "Conway",
+   "prim_dem_2022",
+   980,
+   883,
+   "NOT used in any calculation"
+  ]
+ ],
+ "all_mismatches_resolved_in_favor_of_passB": false,
+ "CLEAN_analysis_figures": false
+}

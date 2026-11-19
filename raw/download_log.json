@@ -1,0 +1,198 @@
+[
+ {
+  "url": "https://results.tally-enr.com/results/arkansas/1844/FullDataFile.json",
+  "file": "raw/2022/FullDataFile.json",
+  "http": "200",
+  "bytes": 26560422,
+  "retrieved": "2026-11-19T12:14:45-06:00"
+ },
+ {
+  "url": "https://enr-results-api.totalresults.com/Election/GetElectionInfo?cId=arkansas&electionID=1844",
+  "file": "raw/2022/api_GetElectionInfo.json",
+  "http": "200",
+  "bytes": 50902,
+  "retrieved": "2026-11-19T12:14:45-06:00"
+ },
+ {
+  "url": "https://enr-results-api.totalresults.com/Contest/GetContestSearchList?cid=arkansas&electionID=1844",
+  "file": "raw/2022/api_GetContestSearchList.json",
+  "http": "200",
+  "bytes": 240887,
+  "retrieved": "2026-11-19T12:14:45-06:00"
+ },
+ {
+  "url": "https://enr-results-api.totalresults.com/Turnout/GetTurnout?cId=arkansas&electionID=1844",
+  "file": "raw/2022/api_GetTurnout.json",
+  "http": "200",
+  "bytes": 3856,
+  "retrieved": "2026-11-19T12:14:45-06:00"
+ },
+ {
+  "url": "https://enr-results-api.totalresults.com/Contest/GetContestResults?cId=arkansas&electionID=1844&contestType=STW",
+  "file": "raw/2022/api_GetContestResults_STW.json",
+  "http": "200",
+  "bytes": 31050,
+  "retrieved": "2026-11-19T12:14:45-06:00"
+ },
+ {
+  "url": "https://enr-results-api.totalresults.com/Contest/GetContestResults?cId=arkansas&electionID=1844&contestType=FED",
+  "file": "raw/2022/api_GetContestResults_FED.json",
+  "http": "200",
+  "bytes": 14122,
+  "retrieved": "2026-11-19T12:14:46-06:00"
+ },
+ {
+  "url": "https://results.tally-enr.com/results/arkansas/1843/FullDataFile.json",
+  "file": "raw/2022_primary/FullDataFile.json",
+  "http": "200",
+  "bytes": 27088037,
+  "retrieved": "2026-11-19T12:14:46-06:00"
+ },
+ {
+  "url": "https://enr-results-api.totalresults.com/Election/GetElectionInfo?cId=arkansas&electionID=1843",
+  "file": "raw/2022_primary/api_GetElectionInfo.json",
+  "http": "200",
+  "bytes": 50882,
+  "retrieved": "2026-11-19T12:14:46-06:00"
+ },
+ {
+  "url": "https://enr-results-api.totalresults.com/Contest/GetContestSearchList?cid=arkansas&electionID=1843",
+  "file": "raw/2022_primary/api_GetContestSearchList.json",
+  "http": "200",
+  "bytes": 91225,
+  "retrieved": "2026-11-19T12:14:46-06:00"
+ },
+ {
+  "url": "https://enr-results-api.totalresults.com/Turnout/GetTurnout?cId=arkansas&electionID=1843",
+  "file": "raw/2022_primary/api_GetTurnout.json",
+  "http": "200",
+  "bytes": 3824,
+  "retrieved": "2026-11-19T12:14:46-06:00"
+ },
+ {
+  "url": "https://enr-results-api.totalresults.com/Contest/GetContestResults?cId=arkansas&electionID=1843&contestType=STW",
+  "file": "raw/2022_primary/api_GetContestResults_STW.json",
+  "http": "200",
+  "bytes": 33610,
+  "retrieved": "2026-11-19T12:14:46-06:00"
+ },
+ {
+  "url": "https://enr-results-api.totalresults.com/Contest/GetContestResults?cId=arkansas&electionID=1843&contestType=FED",
+  "file": "raw/2022_primary/api_GetContestResults_FED.json",
+  "http": "200",
+  "bytes": 18442,
+  "retrieved": "2026-11-19T12:14:47-06:00"
+ },
+ {
+  "url": "https://results.tally-enr.com/results/arkansas/11b07106-031e-4d7c-911a-d01fb473d6dd/FullDataFile.json",
+  "file": "raw/2026/FullDataFile.json",
+  "http": "200",
+  "bytes": 55365804,
+  "retrieved": "2026-11-19T12:14:47-06:00"
+ },
+ {
+  "url": "https://enr-results-api.totalresults.com/Election/GetElectionInfo?cId=arkansas&electionID=11b07106-031e-4d7c-911a-d01fb473d6dd",
+  "file": "raw/2026/api_GetElectionInfo.json",
+  "http": "200",
+  "bytes": 87714,
+  "retrieved": "2026-11-19T12:14:47-06:00"
+ },
+ {
+  "url": "https://enr-results-api.totalresults.com/Contest/GetContestSearchList?cid=arkansas&electionID=11b07106-031e-4d7c-911a-d01fb473d6dd",
+  "file": "raw/2026/api_GetContestSearchList.json",
+  "http": "200",
+  "bytes": 391257,
+  "retrieved": "2026-11-19T12:14:47-06:00"
+ },
+ {
+  "url": "https://enr-results-api.totalresults.com/Turnout/GetTurnout?cId=arkansas&electionID=11b07106-031e-4d7c-911a-d01fb473d6dd",
+  "file": "raw/2026/api_GetTurnout.json",
+  "http": "200",
+  "bytes": 4417,
+  "retrieved": "2026-11-19T12:14:47-06:00"
+ },
+ {
+  "url": "https://enr-results-api.totalresults.com/Contest/GetContestResults?cId=arkansas&electionID=11b07106-031e-4d7c-911a-d01fb473d6dd&contestType=Statewide",
+  "file": "raw/2026/api_GetContestResults_Statewide.json",
+  "http": "200",
+  "bytes": 71959,
+  "retrieved": "2026-11-19T12:14:47-06:00"
+ },
+ {
+  "url": "https://enr-results-api.totalresults.com/Contest/GetContestResults?cId=arkansas&electionID=11b07106-031e-4d7c-911a-d01fb473d6dd&contestType=Federal",
+  "file": "raw/2026/api_GetContestResults_Federal.json",
+  "http": "200",
+  "bytes": 19353,
+  "retrieved": "2026-11-19T12:14:47-06:00"
+ },
+ {
+  "url": "https://results.tally-enr.com/results/arkansas/7f77a178-af02-40ec-92db-c5cc50882c68/FullDataFile.json",
+  "file": "raw/2026_primary/FullDataFile.json",
+  "http": "200",
+  "bytes": 21246557,
+  "retrieved": "2026-11-19T12:14:48-06:00"
+ },
+ {
+  "url": "https://enr-results-api.totalresults.com/Election/GetElectionInfo?cId=arkansas&electionID=7f77a178-af02-40ec-92db-c5cc50882c68",
+  "file": "raw/2026_primary/api_GetElectionInfo.json",
+  "http": "200",
+  "bytes": 93776,
+  "retrieved": "2026-11-19T12:14:48-06:00"
+ },
+ {
+  "url": "https://enr-results-api.totalresults.com/Contest/GetContestSearchList?cid=arkansas&electionID=7f77a178-af02-40ec-92db-c5cc50882c68",
+  "file": "raw/2026_primary/api_GetContestSearchList.json",
+  "http": "200",
+  "bytes": 168805,
+  "retrieved": "2026-11-19T12:14:48-06:00"
+ },
+ {
+  "url": "https://enr-results-api.totalresults.com/Turnout/GetTurnout?cId=arkansas&electionID=7f77a178-af02-40ec-92db-c5cc50882c68",
+  "file": "raw/2026_primary/api_GetTurnout.json",
+  "http": "200",
+  "bytes": 4445,
+  "retrieved": "2026-11-19T12:14:48-06:00"
+ },
+ {
+  "url": "https://enr-results-api.totalresults.com/Contest/GetContestResults?cId=arkansas&electionID=7f77a178-af02-40ec-92db-c5cc50882c68&contestType=Statewide",
+  "file": "raw/2026_primary/api_GetContestResults_Statewide.json",
+  "http": "200",
+  "bytes": 28758,
+  "retrieved": "2026-11-19T12:14:48-06:00"
+ },
+ {
+  "url": "https://enr-results-api.totalresults.com/Contest/GetContestResults?cId=arkansas&electionID=7f77a178-af02-40ec-92db-c5cc50882c68&contestType=Federal",
+  "file": "raw/2026_primary/api_GetContestResults_Federal.json",
+  "http": "200",
+  "bytes": 20445,
+  "retrieved": "2026-11-19T12:14:48-06:00"
+ },
+ {
+  "url": "https://arkansas.tally-enr.com/appConfig.json",
+  "file": "raw/tally_appConfig.json",
+  "http": "200",
+  "bytes": 233,
+  "retrieved": "2026-11-19T12:14:48-06:00"
+ },
+ {
+  "url": "https://enr-results-api.totalresults.com/Client/GetClientConfig?cId=arkansas",
+  "file": "raw/tally_GetClientConfig.json",
+  "http": "200",
+  "bytes": 798,
+  "retrieved": "2026-11-19T12:14:48-06:00"
+ },
+ {
+  "url": "https://enr-results-api.totalresults.com/Election/GetElectionList?cId=arkansas",
+  "file": "raw/tally_GetElectionList.json",
+  "http": "200",
+  "bytes": 754,
+  "retrieved": "2026-11-19T12:14:48-06:00"
+ },
+ {
+  "url": "https://www.sos.arkansas.gov/elections/research/election-results",
+  "file": "raw/sos_election-results_page.html",
+  "http": "200",
+  "bytes": 107970,
+  "retrieved": "2026-11-19T12:14:49-06:00"
+ }
+]

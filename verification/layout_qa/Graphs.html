@@ -1,0 +1,37 @@
+<h1>Graphs</h1>
+<blockquote>
+<p><strong>P = Democratic primary-ballot share (proxy — Arkansas has no party registration).</strong> <strong>2026 general-election figures are UNOFFICIAL</strong> (not yet certified statewide; Arkansas SOS results feed v234, Nov 19 2026). Governor race only. These pages measure a pattern; they make no claim about intent, fraud or cause.</p>
+</blockquote>
+<p>Every chart carries the proxy label, the source and the 2026 UNOFFICIAL status in its footer. Bars run left to right from the largest county to the smallest (Census Vintage 2025).</p>
+<h2>1. Slope chart: G, 2022 → 2026</h2>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://raw.githubusercontent.com/mbenson8989/Arkansas-Election-Analysis/main/AR_Slope_G2022_to_G2026.png"><img src="https://raw.githubusercontent.com/mbenson8989/Arkansas-Election-Analysis/main/AR_Slope_G2022_to_G2026.png" alt="County G (S − P), 2022 → 2026. Red = ceiling counties; blue = floor counties." style="max-width: 100%;"></a></p>
+<p><em>County G (S − P), 2022 → 2026. Red = ceiling counties; blue = floor counties.</em></p>
+<h2>2. ΔG by county, population order</h2>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://raw.githubusercontent.com/mbenson8989/Arkansas-Election-Analysis/main/AR_DeltaG_by_Population.png"><img src="https://raw.githubusercontent.com/mbenson8989/Arkansas-Election-Analysis/main/AR_DeltaG_by_Population.png" alt="ΔG for all 75 counties, largest to smallest population, with the ceiling and floor counties marked." style="max-width: 100%;"></a></p>
+<p><em>ΔG for all 75 counties, largest to smallest population, with the ceiling and floor counties marked.</em></p>
+<h2>3. What ΔG is made of: ΔS vs ΔP</h2>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://raw.githubusercontent.com/mbenson8989/Arkansas-Election-Analysis/main/AR_DeltaG_Components_dS_vs_dP_by_Population.png"><img src="https://raw.githubusercontent.com/mbenson8989/Arkansas-Election-Analysis/main/AR_DeltaG_Components_dS_vs_dP_by_Population.png" alt="ΔS (change in Democratic share of ballots) and −ΔP (minus the change in the proxy) for each county. ΔG = ΔS − ΔP." style="max-width: 100%;"></a></p>
+<p><em>ΔS (change in Democratic share of ballots) and −ΔP (minus the change in the proxy) for each county. ΔG = ΔS − ΔP.</em></p>
+<h2>4. Democratic share of ballots and the proxy, population order</h2>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://raw.githubusercontent.com/mbenson8989/Arkansas-Election-Analysis/main/AR_Stacked_Share_and_Proxy_by_Population.png"><img src="https://raw.githubusercontent.com/mbenson8989/Arkansas-Election-Analysis/main/AR_Stacked_Share_and_Proxy_by_Population.png" alt="Bars: Democratic share of ballots, with the 2026 gain stacked on top. Markers: proxy P in 2022 and 2026." style="max-width: 100%;"></a></p>
+<p><em>Bars: Democratic share of ballots, with the 2026 gain stacked on top. Markers: proxy P in 2022 and 2026.</em></p>
+<h2>5. Forward fit: Arkansas-only constants</h2>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://raw.githubusercontent.com/mbenson8989/Arkansas-Election-Analysis/main/AR_Forward_Fit_G_vs_P_2022_2026.png"><img src="https://raw.githubusercontent.com/mbenson8989/Arkansas-Election-Analysis/main/AR_Forward_Fit_G_vs_P_2022_2026.png" alt="G vs P, 2022 and 2026, with the all-county and narrowed least-squares lines. Black outline = narrowed-out counties." style="max-width: 100%;"></a></p>
+<p><em>G vs P, 2022 and 2026, with the all-county and narrowed least-squares lines. Black outline = narrowed-out counties.</em></p>
+<h2>6. ΔG vs ΔP</h2>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://raw.githubusercontent.com/mbenson8989/Arkansas-Election-Analysis/main/AR_DeltaG_vs_DeltaP_Scatter.png"><img src="https://raw.githubusercontent.com/mbenson8989/Arkansas-Election-Analysis/main/AR_DeltaG_vs_DeltaP_Scatter.png" alt="ΔG against the proxy change ΔP. Slope −0.979; the intercept (+2.09) is the typical rise in S once ΔP is removed." style="max-width: 100%;"></a></p>
+<p><em>ΔG against the proxy change ΔP. Slope −0.979; the intercept (+2.09) is the typical rise in S once ΔP is removed.</em></p>
+<h2>7. Regional constants</h2>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://raw.githubusercontent.com/mbenson8989/Arkansas-Election-Analysis/main/AR_Regional_Fits.png"><img src="https://raw.githubusercontent.com/mbenson8989/Arkansas-Election-Analysis/main/AR_Regional_Fits.png" alt="Separate fits for Northwest, Central, Northeast and South, 2022 (top) and 2026 (bottom), against the statewide line." style="max-width: 100%;"></a></p>
+<p><em>Separate fits for Northwest, Central, Northeast and South, 2022 (top) and 2026 (bottom), against the statewide line.</em></p>
+<h2>8. Over-ballot check</h2>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://raw.githubusercontent.com/mbenson8989/Arkansas-Election-Analysis/main/AR_Overballot_Check_by_Population.png"><img src="https://raw.githubusercontent.com/mbenson8989/Arkansas-Election-Analysis/main/AR_Overballot_Check_by_Population.png" alt="Ballots cast minus (Democratic + Republican governor votes), as a share of ballots. Yell 2022 is below zero; no county is below zero in 2026." style="max-width: 100%;"></a></p>
+<p><em>Ballots cast minus (Democratic + Republican governor votes), as a share of ballots. Yell 2022 is below zero; no county is below zero in 2026.</em></p>
+<h2>Data behind the charts</h2>
+<ul>
+<li>County table: <a href="https://github.com/mbenson8989/Arkansas-Election-Analysis/blob/main/data/AR_Governor_2022_2026_DeltaG_by_County.csv">https://github.com/mbenson8989/Arkansas-Election-Analysis/blob/main/data/AR_Governor_2022_2026_DeltaG_by_County.csv</a></li>
+<li>Fits, regional tests, over-ballot checks: <a href="https://github.com/mbenson8989/Arkansas-Election-Analysis/blob/main/data/AR_results_summary.json">https://github.com/mbenson8989/Arkansas-Election-Analysis/blob/main/data/AR_results_summary.json</a></li>
+<li>Verification (both passes, figure by figure): <a href="https://github.com/mbenson8989/Arkansas-Election-Analysis/tree/main/verification">https://github.com/mbenson8989/Arkansas-Election-Analysis/tree/main/verification</a></li>
+</ul>
+<hr>
+<p><strong>Related:</strong> <a href="Home">Home</a> · <a href="Reverse-Math">Bottom-Up Reverse Math</a> · <a href="Locked-Arkansas-Formula">Locked Arkansas Formula</a> · <a href="Floor-and-Ceiling">Floor and Ceiling Counties</a> · <a href="https://github.com/mbenson8989/Nebraska-Election-Analysis-/wiki/Cedar-Audit">Cedar County Audit (Nebraska)</a></p>

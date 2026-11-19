@@ -1,0 +1,122 @@
+{
+ "sources": {
+  "2022": {
+   "governor_contest_id": "286",
+   "files": [
+    "api_GetContestResults_STW.json",
+    "api_GetTurnout.json",
+    "api_GetElectionInfo.json",
+    "api_GetContestSearchList.json"
+   ]
+  },
+  "2022_primary": {
+   "gov_dem": {
+    "name": "Governor - DEM",
+    "id": "99",
+    "file": "api_GetContestResults_STW.json"
+   },
+   "sen_dem": {
+    "name": "U.S. Senate - DEM",
+    "id": "75",
+    "file": "api_GetContestResults_FED.json"
+   },
+   "sen_rep": {
+    "name": "U.S. Senate - REP",
+    "id": "72",
+    "file": "api_GetContestResults_FED.json"
+   },
+   "gov_rep": {
+    "name": "Governor - REP",
+    "id": "58",
+    "file": "api_GetContestResults_STW.json"
+   }
+  },
+  "2026": {
+   "governor_contest_id": "91ed4546-acf4-4ac7-9f2c-300dcb7f2a5a",
+   "files": [
+    "api_GetContestResults_Statewide.json",
+    "api_GetTurnout.json",
+    "api_GetElectionInfo.json",
+    "api_GetContestSearchList.json"
+   ]
+  },
+  "2026_primary": {
+   "gov_dem": {
+    "name": "DEM Governor",
+    "id": "32eedf4d-f628-4868-8ddc-10b83bdd8030",
+    "file": "api_GetContestResults_Statewide.json"
+   },
+   "sen_dem": {
+    "name": "DEM U.S. Senate",
+    "id": "50023b3b-3962-4604-9745-b91b4939e68d",
+    "file": "api_GetContestResults_Federal.json"
+   },
+   "sen_rep": {
+    "name": "REP U.S. Senate",
+    "id": "1ff198fb-395a-4a8d-9083-eae9bbb9700a",
+    "file": "api_GetContestResults_Federal.json"
+   }
+  }
+ },
+ "statewide": {
+  "2022": {
+   "gov": {
+    "Republican Party": 571105,
+    "Democratic Party": 319242,
+    "Write-in": 16690
+   },
+   "reg": 1799136,
+   "ballots": 914227
+  },
+  "2022_primary": {
+   "reg": 1762024,
+   "ballots": 457856,
+   "gov_dem": 88062,
+   "sen_dem": 91932,
+   "sen_rep": 347556,
+   "gov_rep": 347887
+  },
+  "2026": {
+   "gov": {
+    "Democratic": 343057,
+    "Libertarian": 67025,
+    "Republican": 477996
+   },
+   "reg": 1856404,
+   "ballots": 895505
+  },
+  "2026_primary": {
+   "reg": 1802792,
+   "ballots": 437247,
+   "gov_dem": 129245,
+   "sen_dem": 130683,
+   "sen_rep": 281973
+  }
+ },
+ "county_sum_equals_statewide": {
+  "2022": {
+   "dem": true,
+   "ballots": true,
+   "reg": true,
+   "govtotal": true
+  },
+  "2026": {
+   "dem": true,
+   "ballots": true,
+   "reg": true,
+   "govtotal": true
+  },
+  "2022_primary": {
+   "gov_dem": true,
+   "ballots": true,
+   "sen_dem": true,
+   "sen_rep": true
+  },
+  "2026_primary": {
+   "gov_dem": true,
+   "ballots": true,
+   "sen_dem": true,
+   "sen_rep": true
+  }
+ }
+}

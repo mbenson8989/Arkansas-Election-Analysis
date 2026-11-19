@@ -1,0 +1,98 @@
+<h1>Arkansas 2022 vs 2026 Governor Race: ΔG Method (proxy version)</h1>
+<blockquote>
+<p><strong>P = Democratic primary-ballot share (proxy — Arkansas has no party registration).</strong> <strong>2026 general-election figures are UNOFFICIAL</strong> (not yet certified statewide; Arkansas SOS results feed v234, Nov 19 2026). Governor race only. These pages measure a pattern; they make no claim about intent, fraud or cause.</p>
+</blockquote>
+<p>Method developed by Morissa Benson (CD3 Vice Chair, Nebraska GOP). It began with her <a href="https://github.com/mbenson8989/Nebraska-Election-Analysis-/wiki/Cedar-Audit">Cedar County Audit</a> on the <a href="https://github.com/mbenson8989/Nebraska-Election-Analysis-/wiki">Nebraska Election Analysis wiki</a>. That audit is where the ΔG method and the reverse step come from. This wiki applies the same arithmetic to all 75 Arkansas counties. Arkansas publishes no party-registration counts (party choice on the registration form is optional), so the registration share is replaced by a primary-ballot proxy, as in the South Carolina version. Data: Arkansas Secretary of State election results (<a href="https://arkansas.tally-enr.com/" rel="nofollow">arkansas.tally-enr.com</a>, linked from <a href="https://www.sos.arkansas.gov/elections/research/election-results" rel="nofollow">sos.arkansas.gov</a>). Population comes from the U.S. Census Bureau. Compiled Nov 19, 2026. Code and data: <a href="https://github.com/mbenson8989/Arkansas-Election-Analysis">Arkansas-Election-Analysis</a>.</p>
+<h2>Contents</h2>
+<ol>
+<li><a href="https://github.com/mbenson8989/Nebraska-Election-Analysis-/wiki/Cedar-Audit">Cedar County Audit</a> (Nebraska wiki): where the method started</li>
+<li><a href="Home">Home</a>: this page, statewide summary and verification</li>
+<li><a href="Reverse-Math">Bottom-Up Reverse Math</a>: Dallas → the six largest counties → all 75 counties, then solved backward for implied extra votes</li>
+<li><a href="Locked-Arkansas-Formula">Locked Arkansas Formula</a>: the statewide fitted equation, the equation, the proxy, a blank template, and the Arkansas-only constants</li>
+<li><a href="Floor-and-Ceiling">Floor and Ceiling Counties</a>: the floor and ceiling counties, regional constants, narrowed-out counties and the over-ballot check</li>
+<li><a href="Graphs">Graphs</a>: slope chart, ΔG by population, the ΔS and ΔP components, forward fit, regional fits and the over-ballot check</li>
+</ol>
+<h2>Statewide at a glance</h2>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>Measure</th>
+<th>2022</th>
+<th>2026 (UNOFFICIAL general)</th>
+<th>Change</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Democratic U.S. Senate primary votes</td>
+<td>91,932</td>
+<td>130,683</td>
+<td>+38,751</td>
+</tr>
+<tr>
+<td>Total primary ballots cast (all ballot types)</td>
+<td>457,856</td>
+<td>437,247</td>
+<td>−20,609</td>
+</tr>
+<tr>
+<td><strong>P</strong>: Democratic primary-ballot share (proxy — Arkansas has no party registration)</td>
+<td>20.08%</td>
+<td>29.89%</td>
+<td>+9.81 pts</td>
+</tr>
+<tr>
+<td>Democratic governor votes</td>
+<td>319,242</td>
+<td>343,057</td>
+<td>+23,815</td>
+</tr>
+<tr>
+<td>Total ballots cast</td>
+<td>914,227</td>
+<td>895,505</td>
+<td>−18,722</td>
+</tr>
+<tr>
+<td><strong>S</strong>: Dem share of ballots cast</td>
+<td>34.92%</td>
+<td>38.31%</td>
+<td>+3.39 pts</td>
+</tr>
+<tr>
+<td><strong>G</strong> = S − P</td>
+<td>+14.84</td>
+<td>+8.42</td>
+<td>ΔG −6.42</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<p>Primaries: May 24, 2022 and March 3, 2026 (Arkansas moved its primary to March in 2026). Both primaries are official in the SOS feed.</p>
+<h2>County results in brief</h2>
+<ul>
+<li><strong>S rose in 66 counties and fell in 9.</strong> County ΔS ranges from −8.89 (Franklin) to +7.67 (Sevier), median +2.17.</li>
+<li><strong>The proxy moved more than S.</strong> P rose in 57 counties and fell in 18, from −35.59 (Dallas) to +20.29 (Columbia). Democratic Senate-primary votes rose 42% statewide while total primary ballots fell 5%.</li>
+<li><strong>ΔG tracks the proxy change.</strong> Across counties, ΔG = −0.979 × ΔP + 2.09 (R² 0.90). ΔG rose in 27 counties and fell in 48; county median −1.28 (range −18.14 Pulaski to +39.53 Dallas).</li>
+<li><strong>Ceiling counties</strong> (largest ΔG): Dallas (+39.53), Sevier (+21.79), St. Francis (+17.75), Calhoun (+11.18), Nevada (+10.46). <strong>Floor counties</strong> (lowest 2022 proxy share): Searcy (2.10%), Newton (2.38%), Cross (3.51%), Prairie (3.55%), Montgomery (3.74%). See <a href="Floor-and-Ceiling">Floor and Ceiling Counties</a>.</li>
+<li><strong>Residual step:</strong> 23 counties lost Democratic Senate-primary votes and run the residual step (median residual +1.74). The other 52 are non-loss counties: raw numbers only.</li>
+<li><strong>Solved backward (hypothesis):</strong> implied extra votes sum to 23,537 across 75 counties (30,353 on pooled statewide numbers). The proxy share rose statewide, so there is no registration-loss offset to cover.</li>
+<li><strong>Arkansas-only constants</strong> (G = m × P/100 + b, 75 counties): 2022 m = −42.03, b = +17.57 (R² 0.65); 2026 m = −41.03, b = +17.63 (R² 0.70). See <a href="Locked-Arkansas-Formula">Locked Arkansas Formula</a>.</li>
+<li><strong>Over-ballot check:</strong> <strong>Yell County, 2022</strong> has 5,289 governor votes against 5,033 ballots cast (256 more votes than ballots; Democratic + Republican alone exceed ballots by 161). No other county is flagged in either year, and no county has ballots or votes above registered voters. 2026: no county flagged (UNOFFICIAL data). Details on <a href="Floor-and-Ceiling#over-ballot-check">Floor and Ceiling Counties</a>.</li>
+</ul>
+<h2>Verification: two independent passes over the raw SOS files</h2>
+<ul>
+<li><strong>Pass A</strong> read the bulk <code class="notranslate">FullDataFile.json</code> for each of the 4 elections (host results.tally-enr.com) and built county vote totals by summing precinct rows. Turnout came from the same file's county turnout block.</li>
+<li><strong>Pass B</strong> used separate code on different files: the results API that the SOS site itself calls (host enr-results-api.totalresults.com). County vote totals came from the published county rows of <code class="notranslate">GetContestResults</code>; registered voters and ballots came from <code class="notranslate">GetTurnout</code>, read with regex.</li>
+<li><strong>Result:</strong> 1,725 figure comparisons (75 counties × 23 figures). <strong>1,709 matched, 16 mismatched.</strong> All 825 comparisons for 2026 matched. Every comparison outside two counties matched (1,679 of 1,679).</li>
+<li><strong>The 16 mismatches are all in White and Conway counties, 2022 (general and primary), and all come from the bulk download file.</strong> In that file, White's precinct rows add up to 24,278 governor votes against 23,300 ballots in its own turnout block, and Conway's to 6,952 against 6,820. Both are impossible. Pass B's figures match the White County Election Commission's certified totals (Sanders 18,010, Jones 4,613, Harrington 502) and a third published county table for all 75 counties (Pass B: 0 differences in 300 figures; Pass A: 8). Pass B's statewide primary sums equal the published statewide totals; Pass A exceeds them by exactly the White + Conway differences. These pages use the Pass B figures, marked ‡ in tables. 12 of the 16 mismatches are in figures used in calculations, and all of those are resolved. The other 4 (2022 governor-primary votes) are not used in any calculation.</li>
+<li><strong>Data problem in the SOS feed, 2022 Democratic governor primary:</strong> the feed shows James "Rus" Russell with 11 votes; published results give him 6,421. That is why P uses the Democratic <strong>U.S. Senate</strong> primary, whose statewide totals match the published results in both years.</li>
+</ul>
+<h2>Read this before using the numbers</h2>
+<ul>
+<li><strong>The proxy is not registration.</strong> It is the share of all primary ballots (Democratic, Republican and nonpartisan) that carried a vote in the Democratic U.S. Senate primary. Contested local primaries pull voters onto one party's ballot. In 2026 a new rule let only Republican or unaffiliated registrants take a Republican ballot, while the Democratic primary stayed open.</li>
+<li><strong>The ceiling counties are driven by the proxy.</strong> Dallas's Democratic Senate-primary votes fell from 557 to 123, so P fell 35.59 points. Its S rose 3.93 points.</li>
+<li><strong>2026 general figures are UNOFFICIAL</strong> and still changing; the SOS feed was last updated Nov 19, 2026, 10:36 AM CST.</li>
+<li><strong>A residual is not evidence of altered votes.</strong> Candidate choice, crossover voting, turnout and primary competitiveness all move these numbers.</li>
+</ul>
+<hr>
+<p><strong>Related:</strong> <a href="Reverse-Math">Bottom-Up Reverse Math</a> · <a href="Locked-Arkansas-Formula">Locked Arkansas Formula</a> · <a href="Floor-and-Ceiling">Floor and Ceiling Counties</a> · <a href="Graphs">Graphs</a> · <a href="https://github.com/mbenson8989/Nebraska-Election-Analysis-/wiki/Cedar-Audit">Cedar County Audit (Nebraska)</a></p>

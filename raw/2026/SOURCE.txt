@@ -1,0 +1,8 @@
+Arkansas Secretary of State election results (arkansas.tally-enr.com), election ID 11b07106-031e-4d7c-911a-d01fb473d6dd
+Viewer: https://arkansas.tally-enr.com/#election=11b07106-031e-4d7c-911a-d01fb473d6dd
+https://results.tally-enr.com/results/arkansas/11b07106-031e-4d7c-911a-d01fb473d6dd/FullDataFile.json  http=200 bytes=55365804 retrieved=2026-11-19T12:14:47-06:00
+https://enr-results-api.totalresults.com/Election/GetElectionInfo?cId=arkansas&electionID=11b07106-031e-4d7c-911a-d01fb473d6dd  http=200 bytes=87714 retrieved=2026-11-19T12:14:47-06:00
+https://enr-results-api.totalresults.com/Contest/GetContestSearchList?cid=arkansas&electionID=11b07106-031e-4d7c-911a-d01fb473d6dd  http=200 bytes=391257 retrieved=2026-11-19T12:14:47-06:00
+https://enr-results-api.totalresults.com/Turnout/GetTurnout?cId=arkansas&electionID=11b07106-031e-4d7c-911a-d01fb473d6dd  http=200 bytes=4417 retrieved=2026-11-19T12:14:47-06:00
+https://enr-results-api.totalresults.com/Contest/GetContestResults?cId=arkansas&electionID=11b07106-031e-4d7c-911a-d01fb473d6dd&contestType=Statewide  http=200 bytes=71959 retrieved=2026-11-19T12:14:47-06:00
+https://enr-results-api.totalresults.com/Contest/GetContestResults?cId=arkansas&electionID=11b07106-031e-4d7c-911a-d01fb473d6dd&contestType=Federal  http=200 bytes=19353 retrieved=2026-11-19T12:14:47-06:00

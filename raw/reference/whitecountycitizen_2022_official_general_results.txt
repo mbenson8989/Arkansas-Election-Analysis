@@ -1,0 +1,9 @@
+Source: White County Citizen (The Daily Citizen, Searcy), "Official general election results for White County", Greg Geary, Nov 18, 2022 (updated Jan 9, 2025)
+URL: https://www.whitecountycitizen.com/official-general-election-results-for-white-county/article_f6723bd8-8f0f-5a19-979e-da6c15e93f2e.html
+Retrieved 2026-11-19 via web fetch (direct curl from the box returned HTTP 429). Excerpt, verbatim:
+"The following are the official Nov. 8 general election results Tuesday for White County area races after they were certified Friday by the White County Election Commission:"
+Governor
+Sarah Huckabee Sanders 18,010 (77.81%)
+Chris Jones 4,613 (19.93%)
+Ricky Dale Harrington Jr. 502 (2.17%)
+Write-in 22 (0.10%)

@@ -1,0 +1,501 @@
+<h1>Floor and Ceiling Counties</h1>
+<blockquote>
+<p><strong>P = Democratic primary-ballot share (proxy — Arkansas has no party registration).</strong> <strong>2026 general-election figures are UNOFFICIAL</strong> (not yet certified statewide; Arkansas SOS results feed v234, Nov 19 2026). Governor race only. These pages measure a pattern; they make no claim about intent, fraud or cause.</p>
+</blockquote>
+<h2>How to read floor and ceiling counties</h2>
+<ul>
+<li><strong>Ceiling counties</strong> have the five largest ΔG. All five lost Democratic Senate-primary votes, so their ΔG is mostly a fall in the proxy, not a rise in S.</li>
+<li><strong>Floor counties</strong> have the most Republican baseline: the five lowest 2022 proxy shares.</li>
+<li>The lowest ΔG in the state is Pulaski (−18.14), where the proxy rose sharply.</li>
+</ul>
+<h2>Terminology</h2>
+<ul>
+<li><strong>Ceiling counties</strong>: the five largest ΔG: Dallas, Sevier, St. Francis, Calhoun, Nevada.</li>
+<li><strong>Floor counties</strong>: the five lowest 2022 proxy shares P: Searcy, Newton, Cross, Prairie, Montgomery.</li>
+<li><strong>Non-loss counties</strong>: no drop in Democratic Senate-primary votes from 2022 to 2026 (52 counties). Raw numbers only.</li>
+<li><strong>Loss counties</strong>: Democratic Senate-primary votes fell (23 counties). These run the residual step.</li>
+<li><strong>Narrowed-out counties</strong>: counties left out of the narrowed fit because they distort it (Chicot, Dallas, Desha, Franklin, Jefferson, Lee, Phillips, Pulaski, Sevier, Washington).</li>
+</ul>
+<h2>Ceiling and floor detail</h2>
+<p><strong>Ceiling counties (largest ΔG)</strong></p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>County</th>
+<th>Region</th>
+<th>Population</th>
+<th>P 2022 → 2026 [PROXY]</th>
+<th>S 2022 → 2026</th>
+<th>ΔP</th>
+<th>ΔS</th>
+<th>ΔG</th>
+<th>Lost Dem primary votes?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dallas†</td>
+<td>South</td>
+<td>6,011</td>
+<td>44.96% → 9.36%</td>
+<td>34.76% → 38.69%</td>
+<td>−35.59</td>
+<td>+3.93</td>
+<td>+39.53</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Sevier†</td>
+<td>South</td>
+<td>15,758</td>
+<td>15.57% → 1.45%</td>
+<td>21.21% → 28.88%</td>
+<td>−14.12</td>
+<td>+7.67</td>
+<td>+21.79</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>St. Francis†</td>
+<td>Northeast</td>
+<td>21,800</td>
+<td>60.03% → 46.91%</td>
+<td>49.14% → 53.78%</td>
+<td>−13.12</td>
+<td>+4.63</td>
+<td>+17.75</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Calhoun†</td>
+<td>South</td>
+<td>4,632</td>
+<td>18.93% → 10.74%</td>
+<td>20.24% → 23.22%</td>
+<td>−8.20</td>
+<td>+2.99</td>
+<td>+11.18</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Nevada†</td>
+<td>South</td>
+<td>7,942</td>
+<td>38.73% → 30.48%</td>
+<td>31.30% → 33.51%</td>
+<td>−8.25</td>
+<td>+2.21</td>
+<td>+10.46</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<p><strong>Floor counties (lowest 2022 proxy share)</strong></p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>County</th>
+<th>Region</th>
+<th>Population</th>
+<th>P 2022 → 2026 [PROXY]</th>
+<th>S 2022 → 2026</th>
+<th>ΔP</th>
+<th>ΔS</th>
+<th>ΔG</th>
+<th>Lost Dem primary votes?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Searcy</td>
+<td>Northwest</td>
+<td>7,848</td>
+<td>2.10% → 4.36%</td>
+<td>15.34% → 17.91%</td>
+<td>+2.26</td>
+<td>+2.57</td>
+<td>+0.31</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Newton</td>
+<td>Northwest</td>
+<td>7,026</td>
+<td>2.38% → 8.41%</td>
+<td>17.89% → 20.63%</td>
+<td>+6.03</td>
+<td>+2.74</td>
+<td>−3.29</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Cross</td>
+<td>Northeast</td>
+<td>16,186</td>
+<td>3.51% → 10.85%</td>
+<td>23.48% → 29.78%</td>
+<td>+7.34</td>
+<td>+6.30</td>
+<td>−1.04</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Prairie</td>
+<td>Central</td>
+<td>7,923</td>
+<td>3.55% → 3.83%</td>
+<td>17.03% → 18.22%</td>
+<td>+0.28</td>
+<td>+1.20</td>
+<td>+0.91</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Montgomery</td>
+<td>Central</td>
+<td>8,579</td>
+<td>3.74% → 4.37%</td>
+<td>18.01% → 18.11%</td>
+<td>+0.63</td>
+<td>+0.09</td>
+<td>−0.54</td>
+<td>No</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<p><strong>Lowest five ΔG</strong>: Pulaski (−18.14), Columbia (−16.34), Franklin (−15.51), Jefferson (−13.55), Faulkner (−12.21).</p>
+<h2>Regional constants</h2>
+<p>Regions group Arkansas's eight planning and development districts (Ark. Code § 14-166-202) into four: Northwest (Northwest + Western), Central (Central + West Central), Northeast (White River + East), South (Southwest + Southeast).</p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>Region</th>
+<th>Year</th>
+<th>n</th>
+<th>m</th>
+<th>b</th>
+<th>R²</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Northwest</td>
+<td>2022</td>
+<td>15</td>
+<td>+32.85</td>
+<td>+11.84</td>
+<td>0.29</td>
+</tr>
+<tr>
+<td>Central</td>
+<td>2022</td>
+<td>16</td>
+<td>+0.49</td>
+<td>+13.51</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>Northeast</td>
+<td>2022</td>
+<td>22</td>
+<td>−47.35</td>
+<td>+17.71</td>
+<td>0.90</td>
+</tr>
+<tr>
+<td>South</td>
+<td>2022</td>
+<td>22</td>
+<td>−45.41</td>
+<td>+16.80</td>
+<td>0.72</td>
+</tr>
+<tr>
+<td>Northwest</td>
+<td>2026</td>
+<td>15</td>
+<td>−10.37</td>
+<td>+12.55</td>
+<td>0.04</td>
+</tr>
+<tr>
+<td>Central</td>
+<td>2026</td>
+<td>16</td>
+<td>−28.67</td>
+<td>+15.48</td>
+<td>0.86</td>
+</tr>
+<tr>
+<td>Northeast</td>
+<td>2026</td>
+<td>22</td>
+<td>−40.98</td>
+<td>+16.54</td>
+<td>0.78</td>
+</tr>
+<tr>
+<td>South</td>
+<td>2026</td>
+<td>22</td>
+<td>−53.69</td>
+<td>+22.24</td>
+<td>0.84</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<ul>
+<li><strong>2022:</strong> separate regional lines fit better than one statewide line (p = 0.0000002; 0.0012 after narrowing).</li>
+<li><strong>2026:</strong> p = 0.0055 with all counties, 0.61 after narrowing: the regional difference rests on the narrowed-out counties.</li>
+<li><strong>ΔG by region (median):</strong> Northwest −2.61, Central −1.82, Northeast −2.04, South +1.01. Kruskal-Wallis p = 0.15: no clear regional difference in ΔG.</li>
+</ul>
+<h2>Counties narrowed out of the fit</h2>
+<p>Rule: Cook's distance &gt; 4/n (0.053) or absolute externally studentized residual &gt; 2.5, in either year's fit.</p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>County</th>
+<th>Cook's D 2022</th>
+<th>Studentized 2022</th>
+<th>Cook's D 2026</th>
+<th>Studentized 2026</th>
+<th>P 2022</th>
+<th>G 2022</th>
+<th>P 2026</th>
+<th>G 2026</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Chicot</td>
+<td>0.035</td>
+<td>−0.73</td>
+<td>0.142</td>
+<td>−1.37</td>
+<td>65.34</td>
+<td>−13.51</td>
+<td>78.42</td>
+<td>−21.21</td>
+</tr>
+<tr>
+<td>Dallas</td>
+<td>0.072</td>
+<td>−1.75</td>
+<td>0.084</td>
+<td>+3.17</td>
+<td>44.96</td>
+<td>−10.20</td>
+<td>9.36</td>
+<td>+29.33</td>
+</tr>
+<tr>
+<td>Desha</td>
+<td>0.218</td>
+<td>−1.85</td>
+<td>0.126</td>
+<td>−1.46</td>
+<td>65.47</td>
+<td>−18.98</td>
+<td>71.92</td>
+<td>−19.07</td>
+</tr>
+<tr>
+<td>Franklin</td>
+<td>0.000</td>
+<td>−0.04</td>
+<td>0.049</td>
+<td>−2.63</td>
+<td>7.75</td>
+<td>+14.10</td>
+<td>14.37</td>
+<td>−1.41</td>
+</tr>
+<tr>
+<td>Jefferson</td>
+<td>0.117</td>
+<td>+1.63</td>
+<td>0.000</td>
+<td>+0.08</td>
+<td>56.98</td>
+<td>+1.77</td>
+<td>72.70</td>
+<td>−11.78</td>
+</tr>
+<tr>
+<td>Lee</td>
+<td>0.271</td>
+<td>−1.88</td>
+<td>0.131</td>
+<td>−1.41</td>
+<td>70.08</td>
+<td>−20.93</td>
+<td>74.74</td>
+<td>−19.96</td>
+</tr>
+<tr>
+<td>Phillips</td>
+<td>0.039</td>
+<td>−0.72</td>
+<td>0.145</td>
+<td>−1.35</td>
+<td>68.93</td>
+<td>−14.94</td>
+<td>79.84</td>
+<td>−21.68</td>
+</tr>
+<tr>
+<td>Pulaski</td>
+<td>0.255</td>
+<td>+3.44</td>
+<td>0.054</td>
+<td>+1.11</td>
+<td>45.28</td>
+<td>+15.06</td>
+<td>64.09</td>
+<td>−3.08</td>
+</tr>
+<tr>
+<td>Sevier</td>
+<td>0.007</td>
+<td>−1.03</td>
+<td>0.057</td>
+<td>+2.05</td>
+<td>15.57</td>
+<td>+5.64</td>
+<td>1.45</td>
+<td>+27.42</td>
+</tr>
+<tr>
+<td>Washington</td>
+<td>0.073</td>
+<td>+2.81</td>
+<td>0.048</td>
+<td>+1.67</td>
+<td>29.98</td>
+<td>+19.00</td>
+<td>45.24</td>
+<td>+7.58</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<h2>Over-ballot check</h2>
+<p>Checks in each year: total governor votes &gt; ballots cast; Democratic + Republican governor votes &gt; ballots cast; ballots cast &gt; registered voters; governor votes &gt; registered voters; Democratic + Republican Senate-primary votes &gt; primary ballots.</p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>Check</th>
+<th>2022</th>
+<th>2026 (UNOFFICIAL)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Governor votes &gt; ballots cast</td>
+<td>Yell</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Dem + Rep governor votes &gt; ballots cast</td>
+<td>Yell</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Ballots cast &gt; registered voters</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Governor votes &gt; registered voters</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Dem + Rep Senate-primary votes &gt; primary ballots</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Closest margin, ballots − governor votes</td>
+<td>Yell (−256)</td>
+<td>Calhoun (+11)</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<ul>
+<li><strong>Yell County, 2022 (flag):</strong> 5,289 governor votes (4,172 Sanders, 1,022 Jones, 95 Harrington) against 5,033 ballots cast and 9,962 registered voters. Both passes and the published county table show the same vote counts. Every other statewide race in Yell also has more votes than 5,033, so the published ballots-cast figure looks too low rather than one race too high. Yell's 2022 S (20.31%) is computed on that ballots figure.</li>
+<li><strong>SOS bulk file (Pass A), 2022:</strong> White and Conway precinct rows also exceed their own ballots cast (see <a href="Home">Home</a>). These are file errors; the certified county totals do not exceed ballots.</li>
+</ul>
+<h2>Data sources</h2>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>Data</th>
+<th>Source</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2022 general (election 1844)</td>
+<td>Arkansas SOS results system</td>
+<td><a href="https://arkansas.tally-enr.com/#election=1844" rel="nofollow">https://arkansas.tally-enr.com/#election=1844</a></td>
+</tr>
+<tr>
+<td>2022 preferential primary, May 24 (election 1843)</td>
+<td>Arkansas SOS results system</td>
+<td><a href="https://arkansas.tally-enr.com/#election=1843" rel="nofollow">https://arkansas.tally-enr.com/#election=1843</a></td>
+</tr>
+<tr>
+<td>2026 general, Nov 3 (UNOFFICIAL; feed v234)</td>
+<td>Arkansas SOS results system</td>
+<td><a href="https://arkansas.tally-enr.com/#election=11b07106-031e-4d7c-911a-d01fb473d6dd" rel="nofollow">https://arkansas.tally-enr.com/#election=11b07106-031e-4d7c-911a-d01fb473d6dd</a></td>
+</tr>
+<tr>
+<td>2026 preferential primary, Mar 3 (feed v3318, official)</td>
+<td>Arkansas SOS results system</td>
+<td><a href="https://arkansas.tally-enr.com/#election=7f77a178-af02-40ec-92db-c5cc50882c68" rel="nofollow">https://arkansas.tally-enr.com/#election=7f77a178-af02-40ec-92db-c5cc50882c68</a></td>
+</tr>
+<tr>
+<td>Pass A bulk files</td>
+<td>FullDataFile.json per election</td>
+<td><a href="https://results.tally-enr.com/results/arkansas/1844/FullDataFile.json" rel="nofollow">https://results.tally-enr.com/results/arkansas/1844/FullDataFile.json</a> (same pattern for each election)</td>
+</tr>
+<tr>
+<td>Pass B API files</td>
+<td>GetContestResults, GetTurnout, GetElectionInfo, GetContestSearchList</td>
+<td><a href="https://enr-results-api.totalresults.com/Turnout/GetTurnout?cId=arkansas&amp;electionID=1844" rel="nofollow">https://enr-results-api.totalresults.com/Turnout/GetTurnout?cId=arkansas&amp;electionID=1844</a> (same pattern)</td>
+</tr>
+<tr>
+<td>Election list</td>
+<td>Arkansas SOS election results page</td>
+<td><a href="https://www.sos.arkansas.gov/elections/research/election-results" rel="nofollow">https://www.sos.arkansas.gov/elections/research/election-results</a></td>
+</tr>
+<tr>
+<td>White County certified 2022 totals (check)</td>
+<td>White County Citizen, Nov 18, 2022</td>
+<td><a href="https://www.whitecountycitizen.com/official-general-election-results-for-white-county/article_f6723bd8-8f0f-5a19-979e-da6c15e93f2e.html" rel="nofollow">https://www.whitecountycitizen.com/official-general-election-results-for-white-county/article_f6723bd8-8f0f-5a19-979e-da6c15e93f2e.html</a></td>
+</tr>
+<tr>
+<td>Third county table and statewide primary totals (check)</td>
+<td>Wikipedia 2022 and 2026 governor and U.S. Senate election articles</td>
+<td><a href="https://en.wikipedia.org/wiki/2022_Arkansas_gubernatorial_election" rel="nofollow">https://en.wikipedia.org/wiki/2022_Arkansas_gubernatorial_election</a></td>
+</tr>
+<tr>
+<td>Party choice optional</td>
+<td>EAC NVRA state instructions, Arkansas</td>
+<td><a href="https://www.eac.gov/nvra-instructions-arkansas-english" rel="nofollow">https://www.eac.gov/nvra-instructions-arkansas-english</a></td>
+</tr>
+<tr>
+<td>County population, July 1, 2025 (sort order only)</td>
+<td>U.S. Census Bureau Vintage 2025 estimates</td>
+<td><a href="https://www2.census.gov/programs-surveys/popest/datasets/2020-2025/counties/totals/co-est2025-alldata.csv" rel="nofollow">https://www2.census.gov/programs-surveys/popest/datasets/2020-2025/counties/totals/co-est2025-alldata.csv</a></td>
+</tr>
+<tr>
+<td>Regions</td>
+<td>Ark. Code § 14-166-202 planning and development districts</td>
+<td><a href="https://law.justia.com/codes/arkansas/title-14/subtitle-10/chapter-166/subchapter-2/section-14-166-202/" rel="nofollow">https://law.justia.com/codes/arkansas/title-14/subtitle-10/chapter-166/subchapter-2/section-14-166-202/</a></td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<hr>
+<p><strong>Related:</strong> <a href="Home">Home</a> · <a href="Reverse-Math">Bottom-Up Reverse Math</a> · <a href="Locked-Arkansas-Formula">Locked Arkansas Formula</a> · <a href="Graphs">Graphs</a> · <a href="https://github.com/mbenson8989/Nebraska-Election-Analysis-/wiki/Cedar-Audit">Cedar County Audit (Nebraska)</a></p>

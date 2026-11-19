@@ -1,0 +1,6 @@
+{
+  "totalResultsBaseUrl": "https://enr-results-api.totalresults.com",
+  "publicResultsBaseUrl": "https://results.tally-enr.com",
+  "gisDataUrl": "https://gis.tally-enr.com",
+  "publicFilesBaseUrl": "https://results.tally-enr.com"
+}
