@@ -61,6 +61,19 @@ for g,cl in RC.items(): axs[1].scatter([],[],color=cl,label=g)
 axs[1].legend(fontsize=8,loc='lower left'); axs[0].set_ylabel('G = S − P (points)')
 fig.suptitle('Arkansas forward fit (Arkansas-only constants): G vs proxy P. Black outline = narrowed-out counties.'); fig.subplots_adjust(bottom=0.16); foot(fig)
 fig.savefig(O+'AR_Forward_Fit_G_vs_P_2022_2026.png',dpi=DPI); plt.close()
+# 5b share form: S vs D (stand-in), same fit and residuals as the gap form
+fig,axs=plt.subplots(1,2,figsize=(18,8.5),sharey=True)
+for ax,t,y in ((axs[0],'22','2022'),(axs[1],'26','2026')):
+    f=J['fits'][y+'_share']
+    for c,r in o.iterrows():
+        ax.scatter(r['P'+t],r['S'+t],color=RC[r.region],s=40,zorder=3)
+        if c in CEIL or c in FLOOR or c==f['max_county'] or c=='Pulaski': ax.annotate(c,(r['P'+t],r['S'+t]),fontsize=7,xytext=(3,3),textcoords='offset points')
+    xx=np.linspace(0,100,10); ax.plot(xx,f['m']*xx/100+f['b'],'k-',label=f"S = {f['m']:.2f}·(D/100) + {f['b']:.2f}   R² {f['r2']:.2f}, mean |residual| {f['mean_abs']:.2f} pts")
+    ax.set_xlabel('D: Democratic primary-share STAND-IN (%), not party registration\n(Dem U.S. Senate primary votes ÷ total primary ballots)'); ax.set_title(f'{y}' + (' (UNOFFICIAL)' if y=='2026' else '')); ax.legend(fontsize=8,loc='upper left')
+for g,cl in RC.items(): axs[1].scatter([],[],color=cl,label=g)
+axs[1].legend(fontsize=8,loc='upper left'); axs[0].set_ylabel('S = Dem governor votes ÷ total ballots (%)')
+fig.suptitle('Arkansas share form (Arkansas-only constants): S = m·(D/100) + b, all 75 counties. D is a primary-share stand-in; Arkansas has no party registration.'); fig.subplots_adjust(bottom=0.16); foot(fig)
+fig.savefig(O+'AR_Share_Form_S_vs_D_2022_2026.png',dpi=DPI); plt.close()
 # 6 dG vs dP
 fig,ax=plt.subplots(figsize=(11,9)); f=J['fits']['dG_on_dP']
 for c,r in o.iterrows():

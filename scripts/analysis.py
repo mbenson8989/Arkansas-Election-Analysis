@@ -113,6 +113,11 @@ o['flag']=''
 for c_ in FLOOR.index: o.loc[c_,'flag']='floor'
 for c_ in CEIL.index: o.loc[c_,'flag']=(o.loc[c_,'flag']+'; ' if o.loc[c_,'flag'] else '')+'ceiling'
 for c_ in flag: o.loc[c_,'flag']=(o.loc[c_,'flag']+'; ' if o.loc[c_,'flag'] else '')+'narrowed-out'
+for t_,y_ in (('22','2022'),('26','2026')):
+    F[y_+'_share'],rs_=fit(o['S'+t_],o['P'+t_]); e_=o['S'+t_]-np.asarray(rs_.fittedvalues)
+    F[y_+'_share'].update(mean_abs=float(np.mean(np.abs(e_))),max_abs=float(np.max(np.abs(e_))),max_county=str(e_.abs().idxmax()),max_signed=float(e_[e_.abs().idxmax()]),rmse=float(np.sqrt(np.mean(e_**2))),
+        identity_max_diff_vs_gap_residuals=float(np.max(np.abs(e_-o['res'+t_]))))
+    o['Sfit'+t_]=np.asarray(rs_.fittedvalues); o['Sres'+t_]=e_
 o.to_pickle('/tmp/ar_o.pkl')
 cols=['pop2025','pop2020base','region','pdd','flag','reg_2022','ballots_2022','dem_2022','rep_2022','other_2022','govtotal_2022','prim_ballots_2022','prim_demsen_2022','prim_repsen_2022','S22','P22','G22',
       'reg_2026','ballots_2026','dem_2026','rep_2026','other_2026','govtotal_2026','prim_ballots_2026','prim_demsen_2026','prim_repsen_2026','S26','P26','G26','dS','dP','dG','loss','residual','implied_extra_votes','gap_primary_scaled','fit22','res22','fit26','res26','P2p22','P2p26']

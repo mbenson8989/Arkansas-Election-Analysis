@@ -6,7 +6,7 @@
 Exit 1 on any failure."""
 import csv,re,sys,json,itertools,pandas as pd,numpy as np
 W='/workspace/arkansas-elections/'; WK=W+'wiki/'
-PAGES=['Home','Reverse-Math','Locked-Arkansas-Formula','Floor-and-Ceiling','Graphs']
+PAGES=['Home','Reverse-Math','Locked-Arkansas-Formula','Floor-and-Ceiling','Graphs']+(['Arkansas-County-PDF-Information'] if json.load(open('/workspace/arkansas-elections/scripts/publish_config.json'))['pdf_page_published'] else [])
 B={r['county']:{k:int(v) for k,v in r.items() if k!='county'} for r in csv.DictReader(open(W+'verification/passB_counties.csv'))}
 J=json.load(open(W+'repo/data/AR_results_summary.json')); C=json.load(open(W+'verification/compare_report.json'))
 A={r['county']:{k:int(v) for k,v in r.items() if k!='county'} for r in csv.DictReader(open(W+'verification/passA_counties.csv'))}
@@ -110,7 +110,55 @@ for tok,v in zip(re.findall(r'Predicted ΔG = .*?= ([−+][\d.]+)\. Actual ΔG =
     if abs(num(tok)-round(v,2))>0.0051: fail.append(('worked example',wx,tok,v))
 for v in list(FX.values())+[dr,pr,o.loc[wx,'dG']-pr,FX['r2']*100]: add(v)
 if 'Arkansas has no party registration' not in fs or 'UNOFFICIAL' not in fs: fail.append(('fitted section labels',))
+PJ=json.load(open(W+'verification/pdf_build.json')); add(PJ['pages']); add(len(PJ['fell'])); add(100*T.prim_demsen_2026/T.prim_ballots_2026)
+if 'Arkansas-County-PDF-Information' in PAGES:
+    pdt=open(WK+'Arkansas-County-PDF-Information.md').read(); import os
+    PURL='https://raw.githubusercontent.com/mbenson8989/Arkansas-Election-Analysis/main/Arkansas_75_County_Democratic_Primary_Share_and_Vote_Change.pdf'
+    if f'**[Download the Arkansas 75-County Summary (PDF)]({PURL})**' not in pdt: fail.append(('pdf page: bold raw download link missing',))
+    if not os.path.isfile(W+'repo/Arkansas_75_County_Democratic_Primary_Share_and_Vote_Change.pdf'): fail.append(('pdf not in repo/',))
+    PJ=json.load(open(W+'verification/pdf_build.json')); add(PJ['pages']); add(len(PJ['fell'])); add(100*T.prim_demsen_2026/T.prim_ballots_2026)
+    if '](Arkansas-County-PDF-Information)' not in open(WK+'Home.md').read(): fail.append(('Home missing PDF page link',))
+else:
+    for p_ in ['Home','_Sidebar']+PAGES:
+        if 'Arkansas-County-PDF-Information' in open(WK+p_+'.md').read(): fail.append(('PDF page linked but not approved for publishing',p_))
+# ---------- 2d) share form S = m*(D/100)+b, refit here with numpy from PASS B
+shs=lkt.split('## Share form: S = m × (D/100) + b')[1].split('\n## ')[0]
+SF={}
+for t_ in ('22','26'):
+    yv=o['S'+t_].values; X=np.c_[np.ones(75),o['P'+t_].values/100]; be,*_=np.linalg.lstsq(X,yv,rcond=None); e=yv-X@be; s2=e@e/73; se=np.sqrt(np.diag(s2*np.linalg.inv(X.T@X)))
+    k=int(np.argmax(abs(e)))
+    SF[t_]=dict(m=be[1],b=be[0],m_se=se[1],b_se=se[0],r2=1-e@e/((yv-yv.mean())@(yv-yv.mean())),mean_abs=np.mean(abs(e)),max_signed=e[k],max_county=o.index[k],rmse=np.sqrt(np.mean(e**2)),n=75,pred=dict(zip(o.index,X@be)),res=dict(zip(o.index,e)))
+    gm=J['fits']['20'+t_]['m']; G_=o['G'+t_].values; lit=np.mean(abs(yv-(gm*o['P'+t_].values/100+J['fits']['20'+t_]['b'])))
+    for v in (be[1],be[0],se[0],se[1],SF[t_]['r2'],SF[t_]['mean_abs'],e[k],SF[t_]['rmse'],gm+100,lit): add(v)
+    for v in SF[t_]['pred'].values(): add(v)
+    for v in SF[t_]['res'].values(): add(v)
+    add(o['P'+t_].values.mean()); [add(x/100) for x in o['P'+t_].values]
+rowsS={c[0]:c[1:] for c in ([z.strip() for z in l.strip('|').split('|')] for l in shs.splitlines() if l.startswith('| ') and not l.startswith('| Item'))}
+def cellpair(v,se,dec):
+    return f"{v:.{dec}f}" if se is None else (v,se)
+chk=[('Multiplier m (SE)','m','m_se'),('Offset b (SE)','b','b_se')]
+for lab,k1,k2 in chk:
+    for j,t_ in enumerate(('22','26')):
+        mm=re.match(r'([−+\-]?[\d.]+) \(([\d.]+)\)',rowsS[lab][j]); n1+=2
+        if abs(num(mm.group(1))-round(SF[t_][k1],2))>0.0051 or abs(num(mm.group(2))-round(SF[t_][k2],2))>0.0051: fail.append(('share table',lab,t_,rowsS[lab][j]))
+for lab,k,d in (('R²','r2',3),('Mean absolute residual (pts)','mean_abs',2),('RMSE (pts)','rmse',2),('n (counties)','n',0)):
+    for j,t_ in enumerate(('22','26')):
+        n1+=1
+        if abs(num(rowsS[lab][j])-round(SF[t_][k],d))>10**-max(d,0)*0.51: fail.append(('share table',lab,t_,rowsS[lab][j]))
+for j,t_ in enumerate(('22','26')):
+    mm=re.match(r'([−+\-][\d.]+) \((.+)\)',rowsS['Largest residual (pts)'][j]); n1+=2
+    if abs(num(mm.group(1))-round(SF[t_]['max_signed'],2))>0.0051 or mm.group(2)!=SF[t_]['max_county']: fail.append(('share table largest',t_,rowsS['Largest residual (pts)'][j]))
+for t_,lab in (('22','2022:'),('26','2026 (UNOFFICIAL):')):
+    mm=re.search(re.escape(lab)+r'\s+S = ([\d.]+) × \(D/100\) \+ ([\d.]+)',shs); n1+=2
+    if not mm or abs(num(mm.group(1))-round(SF[t_]['m'],2))>0.0051 or abs(num(mm.group(2))-round(SF[t_]['b'],2))>0.0051: fail.append(('share equation line',lab))
+wx=re.search(r'\*\*Worked example: ([A-Za-z .]+)\.\*\*',shs).group(1)
+for t_,y_ in (('22','2022'),('26','2026')):
+    mm=re.search(y_+r': D = ([\d.]+), predicted S = .*? = ([\d.]+); actual S = ([\d.]+); residual ([−+]\d+\.\d+)',shs); n1+=4
+    for got,v in zip(mm.groups(),(o.loc[wx,'P'+t_],SF[t_]['pred'][wx],o.loc[wx,'S'+t_],SF[t_]['res'][wx])):
+        if abs(num(got)-round(v,2))>0.0051: fail.append(('share worked example',wx,y_,got,v))
+if 'stand-in' not in shs or 'not party registration' not in shs or 'UNOFFICIAL' not in shs: fail.append(('share section labels',))
 sb=open(WK+'_Sidebar.md').read()
+if 'Arkansas-County-PDF-Information' in PAGES and (sb.find('/wiki/Graphs)')>sb.find('/wiki/Arkansas-County-PDF-Information)') or sb.split('/wiki/Graphs)')[1].split('\n')[1].find('Arkansas-County-PDF-Information')<0): fail.append(('sidebar: PDF page not right after Graphs',))
 for p_ in PAGES:
     if f'/wiki/{p_})' not in sb: fail.append(('sidebar missing',p_))
 for p in PAGES:
@@ -146,5 +194,5 @@ for p in PAGES:
     for need in ('Democratic primary-ballot share (proxy — Arkansas has no party registration)','UNOFFICIAL','https://github.com/mbenson8989/Nebraska-Election-Analysis-/wiki/Cedar-Audit'):
         if need not in txt: fail.append(('label missing',p,need))
     if len(re.findall(r'^> ',txt,flags=re.M))<1: fail.append(('banner missing',p))
-print(f'full table rows {len(rows)}, table checks {n1}; numbers checked on 5 pages {n2}; FAIL {len(fail)}'); [print(x) for x in fail[:60]]
+print(f'full table rows {len(rows)}, table checks {n1}; numbers checked on {len(PAGES)} pages {n2}; FAIL {len(fail)}'); [print(x) for x in fail[:60]]
 sys.exit(1 if fail else 0)

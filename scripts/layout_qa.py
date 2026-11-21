@@ -5,7 +5,7 @@ Home 'Pages' list links all five slugs; in-wiki anchors exist; every Graphs imag
 import re, os, sys, html, json
 from html.parser import HTMLParser
 W='/workspace/arkansas-elections/'; WK=W+'wiki/'; Q=W+'verification/layout_qa/'
-PAGES=['Home','Reverse-Math','Locked-Arkansas-Formula','Floor-and-Ceiling','Graphs']
+PAGES=['Home','Reverse-Math','Locked-Arkansas-Formula','Floor-and-Ceiling','Graphs']+(['Arkansas-County-PDF-Information'] if json.load(open('/workspace/arkansas-elections/scripts/publish_config.json'))['pdf_page_published'] else [])
 def slugify(h): return re.sub(r'[^\w\- ]','',h.strip().lower()).replace(' ','-')
 issues=[]; report={}
 heads={}
@@ -57,11 +57,15 @@ for s in PAGES:
     if f']({s})' not in home: issues.append(('Home','Contents list missing',s))
 # --- Graphs images
 RAW='https://raw.githubusercontent.com/mbenson8989/Arkansas-Election-Analysis/main/'
-imgs=re.findall(r'!\[[^\]]*\]\(([^)]+)\)',open(WK+'Graphs.md').read()); report['Graphs']['images']=imgs
-for u in imgs:
-    if not u.startswith(RAW) or not os.path.isfile(W+'repo/'+u[len(RAW):]): issues.append(('Graphs','image file missing in repo/',u))
-rimg=re.findall(r'<img [^>]*>',open(Q+'Graphs.html').read())
-if len(rimg)!=len(imgs): issues.append(('Graphs','rendered image count',len(rimg),len(imgs)))
+for pg in PAGES:
+    imgs=re.findall(r'!\[[^\]]*\]\(([^)]+)\)',open(WK+pg+'.md').read()); report[pg]['images']=imgs
+    for u in imgs:
+        if not u.startswith(RAW) or not os.path.isfile(W+'repo/'+u[len(RAW):]): issues.append((pg,'image file missing in repo/',u))
+    rimg=re.findall(r'<img [^>]*>',open(Q+pg+'.html').read())
+    if len(rimg)!=len(imgs): issues.append((pg,'rendered image count',len(rimg),len(imgs)))
+sb=open(WK+'_Sidebar.md').read()
+for pg in PAGES:
+    if f'/wiki/{pg})' not in sb: issues.append(('_Sidebar','missing',pg))
 json.dump(dict(report=report,issues=issues),open(Q+'layout_qa_report.json','w'),indent=1,ensure_ascii=False)
 for p in PAGES: print(p,{k:v for k,v in report[p].items() if k!='headings' and k!='images'})
 print('ISSUES',len(issues)); [print(' ',i) for i in issues]

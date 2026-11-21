@@ -12,7 +12,9 @@ T=PO['totals']; N=len(o)
 PLABEL="Democratic primary-ballot share (proxy — Arkansas has no party registration)"
 BANNER=(f"> **P = {PLABEL}.** **2026 general-election figures are UNOFFICIAL** (not yet certified statewide; Arkansas SOS results feed v234, Nov 19 2026). "
         "Governor race only. These pages measure a pattern; they make no claim about intent, fraud or cause.")
-PAGES=[('Home','Home'),('Bottom-Up Reverse Math','Reverse-Math'),('Locked Arkansas Formula','Locked-Arkansas-Formula'),('Floor and Ceiling Counties','Floor-and-Ceiling'),('Graphs','Graphs')]
+PUBCFG=json.load(open(W+'scripts/publish_config.json')); PDF_PUB=PUBCFG['pdf_page_published']
+PAGES=[('Home','Home'),('Bottom-Up Reverse Math','Reverse-Math'),('Locked Arkansas Formula','Locked-Arkansas-Formula'),('Floor and Ceiling Counties','Floor-and-Ceiling'),('Graphs','Graphs'),('Arkansas County PDF Information','Arkansas-County-PDF-Information')]
+if not PDF_PUB: PAGES=PAGES[:-1]   # PDF page held back (owner has not approved publishing the PDF)
 REL=lambda here:"\n---\n**Related:** "+" · ".join([f"[{t}]({s})" for t,s in PAGES if s!=here]+[f"[Cedar County Audit (Nebraska)]({CEDAR})"])+"\n"
 img=lambda fn,cap:f"![{cap}]({RAW}{fn})\n\n*{cap}*\n"
 mark=lambda c:('†' if o.loc[c,'loss'] else '')+('‡' if c in('White','Conway') else '')+('§' if c=='Yell' else '')
@@ -27,7 +29,9 @@ def full_table():
         h+=(f"| {c}{mark(c)} | {r.region} | {f(r.pop2025)} | {f(r.prim_demsen_2022)} | {f(r.prim_ballots_2022)} | {p2(r.P22)} | {f(r.dem_2022)} | {f(r.ballots_2022)} | {p2(r.S22)} | {sg(r.G22)} | "
             f"{f(r.prim_demsen_2026)} | {f(r.prim_ballots_2026)} | {p2(r.P26)} | {f(r.dem_2026)} | {f(r.ballots_2026)} | {p2(r.S26)} | {sg(r.G26)} | {sg(r.dG)} |\n")
     return h
+PDFJ=json.load(open(W+'verification/pdf_build.json')); PDFN='Arkansas_75_County_Democratic_Primary_Share_and_Vote_Change.pdf'
 top=CEIL[0]; a=o.loc[top]
+PDFLINE=(f"7. [Arkansas County PDF Information](Arkansas-County-PDF-Information): a {PDFJ['pages']}-page PDF table of all {N} counties (proxy share, Democratic governor votes, total ballots, 2022 vs 2026), with download link\n") if PDF_PUB else ''
 six=o.head(6)
 # ==================================================== HOME
 home=f"""# Arkansas 2022 vs 2026 Governor Race: ΔG Method (proxy version)
@@ -44,7 +48,7 @@ Method developed by Morissa Benson (CD3 Vice Chair, Nebraska GOP). It began with
 4. [Locked Arkansas Formula](Locked-Arkansas-Formula): the statewide fitted equation, the equation, the proxy, a blank template, and the Arkansas-only constants
 5. [Floor and Ceiling Counties](Floor-and-Ceiling): the floor and ceiling counties, regional constants, narrowed-out counties and the over-ballot check
 6. [Graphs](Graphs): slope chart, ΔG by population, the ΔS and ΔP components, forward fit, regional fits and the over-ballot check
-
+{PDFLINE}
 ## Statewide at a glance
 
 | Measure | 2022 | 2026 (UNOFFICIAL general) | Change |
@@ -158,6 +162,8 @@ For each county, implied extra votes = 2026 Democratic votes − (2022 Democrati
 open(WK+'Reverse-Math.md','w').write(rm)
 # ==================================================== LOCKED
 f22,f26=F['2022'],F['2026']
+SH22=F['2022_share']; SH26=F['2026_share']; SWX=o.index[0]
+LIT22=float(np.mean(np.abs(o.S22-(f22['m']*o.P22/100+f22['b'])))); LIT26=float(np.mean(np.abs(o.S26-(f26['m']*o.P26/100+f26['b']))))
 _d=F['dG_on_dP']; FE=dict(n=_d['n'],b=_d['b'],b_se=_d['b_se'],k=-_d['m']/100,k_se=_d['m_se']/100,r2=_d['r2'])
 WX=o.index[0]; WXpred=FE['b']+FE['k']*(o.loc[WX,'P22']-o.loc[WX,'P26'])
 json.dump(dict(FE=FE,example=WX,drop=float(o.loc[WX,'P22']-o.loc[WX,'P26']),pred=float(WXpred),actual=float(o.loc[WX,'dG'])),open(W+'verification/fitted_equation.json','w'),indent=1)
@@ -188,6 +194,31 @@ Fitted by least squares across all {FE['n']} counties (n = {FE['n']}): 2022 to 2
 
 **Worked example: {WX}** (largest county). P went from {p2(o.loc[WX,'P22'])} to {p2(o.loc[WX,'P26'])}, a primary-proxy drop of {(o.loc[WX,'P22']-o.loc[WX,'P26']):+.4f} points (the proxy rose). Predicted ΔG = {FE['b']:+.4f} + {FE['k']:.4f} × ({(o.loc[WX,'P22']-o.loc[WX,'P26']):+.4f}) = {sg(WXpred)}. Actual ΔG = {sg(o.loc[WX,'dG'])}. Difference from the fitted line (actual − predicted) = {sg(o.loc[WX,'dG']-WXpred)}. This difference is not the line-11 residual in the template below, which is ΔG minus the proxy-share loss and applies only to counties that lost Democratic Senate-primary votes.
 
+## Share form: S = m × (D/100) + b
+
+```
+2022:              S = {SH22['m']:.2f} × (D/100) + {SH22['b']:.2f}
+2026 (UNOFFICIAL): S = {SH26['m']:.2f} × (D/100) + {SH26['b']:.2f}
+```
+
+- **S** = Democratic governor votes ÷ total ballots cast × 100 (the county's Democratic share of ballots, %).
+- **D** = Democratic primary-share **stand-in**, not party registration: Democratic U.S. Senate primary votes ÷ total primary ballots cast × 100 (the same P used everywhere in this wiki). Arkansas has no party registration, so D is never an official registration share.
+
+| Item | 2022 | 2026 (UNOFFICIAL) |
+|---|---|---|
+| Multiplier m (SE) | {SH22['m']:.2f} ({p2(SH22['m_se'])}) | {SH26['m']:.2f} ({p2(SH26['m_se'])}) |
+| Offset b (SE) | {sg(SH22['b'])} ({p2(SH22['b_se'])}) | {sg(SH26['b'])} ({p2(SH26['b_se'])}) |
+| R² | {SH22['r2']:.3f} | {SH26['r2']:.3f} |
+| Mean absolute residual (pts) | {p2(SH22['mean_abs'])} | {p2(SH26['mean_abs'])} |
+| Largest residual (pts) | {sg(SH22['max_signed'])} ({SH22['max_county']}) | {sg(SH26['max_signed'])} ({SH26['max_county']}) |
+| RMSE (pts) | {p2(SH22['rmse'])} | {p2(SH26['rmse'])} |
+| n (counties) | {SH22['n']} | {SH26['n']} |
+
+Fitted by least squares across all {N} counties, each weighted equally; residual = actual S − predicted S. **This is the same line as the locked gap form below, rewritten.** Because G = S − D, the gap-form constants G = m × (D/100) + b convert to the share form by adding 100 to m and keeping b: 2022 {sg(f22['m'])} + 100 = {f22['m']+100:.2f}; 2026 {sg(f26['m'])} + 100 = {f26['m']+100:.2f}. The residuals are identical in both forms, so the scatter points and fit lines on [Graphs](Graphs#5-forward-fit-arkansas-only-constants) show the same county residuals. **Do not plug the gap-form m (about −42) into the share form:** that predicts S badly (mean absolute residual {p2(LIT22)} points in 2022 and {p2(LIT26)} in 2026).
+
+**Worked example: {SWX}.** 2022: D = {p2(o.loc[SWX,'P22'])}, predicted S = {SH22['m']:.4f} × {o.loc[SWX,'P22']/100:.4f} + {SH22['b']:.4f} = {p2(o.loc[SWX,'Sfit22'])}; actual S = {p2(o.loc[SWX,'S22'])}; residual {sg(o.loc[SWX,'Sres22'])}. 2026: D = {p2(o.loc[SWX,'P26'])}, predicted S = {SH26['m']:.4f} × {o.loc[SWX,'P26']/100:.4f} + {SH26['b']:.4f} = {p2(o.loc[SWX,'Sfit26'])}; actual S = {p2(o.loc[SWX,'S26'])}; residual {sg(o.loc[SWX,'Sres26'])}.
+
+{img('AR_Share_Form_S_vs_D_2022_2026.png','Share form: S vs D (Democratic primary-share stand-in) with the all-county least-squares line, 2022 and 2026 (2026 UNOFFICIAL).')}
 ## The equation
 
 - **S** (Democratic vote share) = Democratic governor votes ÷ total ballots cast × 100. Ballots cast is the SOS county turnout figure.
@@ -248,7 +279,7 @@ Fitted by least squares across all {FE['n']} counties (n = {FE['n']}): 2022 to 2
 
 ## Arkansas-only constants (forward fit)
 
-The forward surplus equation is fit by least squares across all {N} Arkansas counties, each county weighted equally: **G = m × (P ÷ 100) + b**. It uses Arkansas data only. No other state's constant is reused.
+The forward surplus equation is fit by least squares across all {N} Arkansas counties, each county weighted equally: **G = m × (P ÷ 100) + b**. It uses Arkansas data only. No other state's constant is reused. The same fit in share form (S = m × (D/100) + b, D = the primary-share stand-in) is in [Share form](#share-form-s--m--d100--b) above.
 
 | Fit | n | m (SE) | b (SE) | R² | Residual SE | Within ±1 / ±2 / ±3 pts | Median abs. residual |
 |---|---|---|---|---|---|---|---|
@@ -392,5 +423,29 @@ for fn in glob.glob(WK+'*.md'):
     t=open(fn).read(); t=re.sub(r'(?<![\w/.\-=&?])-(\d)',r'−\1',t); open(fn,'w').write(t)
 print('built')
 
+
+# ==================================================== COUNTY PDF PAGE
+pdfp=f"""# Arkansas County PDF Information
+
+{BANNER}
+
+This {PDFJ['pages']}-page PDF covers all {N} Arkansas counties, 2022 vs 2026 (2026 general UNOFFICIAL). For each county it lists the 2026 proxy share, Democratic governor votes and total ballots cast for both years, with each change as a number and a percent. Counties are sorted by 2026 proxy share, highest first, with {PDFJ['order'][0]} first; a statewide totals row closes the table. Figures are the Pass B county figures used everywhere in this wiki. The ΔG, residual and reverse-math results are on the [Bottom-Up Reverse Math](Reverse-Math) and [Floor and Ceiling Counties](Floor-and-Ceiling) pages.
+
+**Columns**
+
+- **Dem Primary Share 2026 % (PROXY):** P = {PLABEL}. Democratic U.S. Senate primary votes ÷ total primary ballots cast (all ballot types), March 3, 2026 preferential primary. It stands in for a registration share because Arkansas publishes no party-registration counts.
+- **Dem Gov Votes 2022 / 2026\\*:** votes for the Democratic governor candidate (2022 official; 2026 UNOFFICIAL, SOS feed v234).
+- **Vote Change (number and percent):** 2026 minus 2022, and that change as a percent of the 2022 figure.
+- **Total Ballots 2022 / 2026\\*:** total ballots cast in the county (SOS turnout figure).
+- **Ballot Change (number and percent):** 2026 minus 2022, and that change as a percent of the 2022 figure.
+- **Marks:** † the county lost Democratic Senate-primary votes; ‡ White and Conway, where the SOS bulk file is defective for 2022 and the Pass B figures (which match the certified White County totals) are used; § Yell, 2022 over-ballot flag ({f(y.govtotal_2022)} governor votes vs {f(y.ballots_2022)} ballots). Shaded rows: Democratic governor votes fell ({len(PDFJ['fell'])} counties).
+
+Statewide totals row: Democratic governor votes {f(PDFJ['totals']['dem_2022'])} → {f(PDFJ['totals']['dem_2026'])}, total ballots {f(PDFJ['totals']['ballots_2022'])} → {f(PDFJ['totals']['ballots_2026'])}, 2026 proxy share {100*PDFJ['totals']['prim_demsen_2026']/PDFJ['totals']['prim_ballots_2026']:.1f}%.
+
+**[Download the Arkansas 75-County Summary (PDF)]({RAW}{PDFN})**
+{REL('Arkansas-County-PDF-Information')}"""
+import os; os.makedirs(W+'wiki_drafts',exist_ok=True)
+open((WK if PDF_PUB else W+'wiki_drafts/')+'Arkansas-County-PDF-Information.md','w').write(pdfp)
+if not PDF_PUB and os.path.exists(WK+'Arkansas-County-PDF-Information.md'): os.remove(WK+'Arkansas-County-PDF-Information.md')
 # ==================================================== SIDEBAR
 open(WK+'_Sidebar.md','w').write("**Arkansas ΔG wiki**\n\n"+"".join(f"- [{t}](https://github.com/mbenson8989/Arkansas-Election-Analysis/wiki/{sl})\n" for t,sl in PAGES)+"- [Cedar County Audit (Nebraska)]("+CEDAR+")\n\n*P is a primary-ballot proxy (no party registration). 2026 general figures UNOFFICIAL.*\n")

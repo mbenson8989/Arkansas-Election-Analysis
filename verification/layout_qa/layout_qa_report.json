@@ -29,7 +29,8 @@
      "Read this before using the numbers"
     ]
    ],
-   "banner_chars": 312
+   "banner_chars": 312,
+   "images": []
   },
   "Reverse-Math": {
    "md_tables": 5,
@@ -68,11 +69,12 @@
      "Full county table (75 counties, largest to smallest population)"
     ]
    ],
-   "banner_chars": 312
+   "banner_chars": 312,
+   "images": []
   },
   "Locked-Arkansas-Formula": {
-   "md_tables": 4,
-   "html_tables": 4,
+   "md_tables": 5,
+   "html_tables": 5,
    "headings": [
     [
      "1",
@@ -81,6 +83,10 @@
     [
      "2",
      "Arkansas fitted equation (final)"
+    ],
+    [
+     "2",
+     "Share form: S = m × (D/100) + b"
     ],
     [
      "2",
@@ -107,7 +113,10 @@
      "Rules for using this formula"
     ]
    ],
-   "banner_chars": 312
+   "banner_chars": 312,
+   "images": [
+    "https://raw.githubusercontent.com/mbenson8989/Arkansas-Election-Analysis/main/AR_Share_Form_S_vs_D_2022_2026.png"
+   ]
   },
   "Floor-and-Ceiling": {
    "md_tables": 6,
@@ -146,7 +155,8 @@
      "Data sources"
     ]
    ],
-   "banner_chars": 312
+   "banner_chars": 312,
+   "images": []
   },
   "Graphs": {
    "md_tables": 0,

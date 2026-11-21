@@ -1,8 +1,8 @@
-<h1>Locked Arkansas Formula</h1>
+<h1 dir="auto">Locked Arkansas Formula</h1>
 <blockquote>
-<p><strong>P = Democratic primary-ballot share (proxy — Arkansas has no party registration).</strong> <strong>2026 general-election figures are UNOFFICIAL</strong> (not yet certified statewide; Arkansas SOS results feed v234, Nov 19 2026). Governor race only. These pages measure a pattern; they make no claim about intent, fraud or cause.</p>
+<p dir="auto"><strong>P = Democratic primary-ballot share (proxy — Arkansas has no party registration).</strong> <strong>2026 general-election figures are UNOFFICIAL</strong> (not yet certified statewide; Arkansas SOS results feed v234, Nov 19 2026). Governor race only. These pages measure a pattern; they make no claim about intent, fraud or cause.</p>
 </blockquote>
-<h2>Arkansas fitted equation (final)</h2>
+<h2 dir="auto">Arkansas fitted equation (final)</h2>
 <pre class="notranslate"><code class="notranslate">Arkansas equation:  ΔG = +2.09 + 0.98 × (Dem primary-proxy drop, points)
 Four decimals:      ΔG = +2.0947 + 0.9792 × (Dem primary-proxy drop, points)
 </code></pre>
@@ -47,11 +47,69 @@ Four decimals:      ΔG = +2.0947 + 0.9792 × (Dem primary-proxy drop, points)
 </tr>
 </tbody>
 </table></markdown-accessiblity-table>
-<p>Fitted by least squares across all 75 counties (n = 75): 2022 to 2026 governor race, ballots-cast denominator, locked gap formula. <strong>Proxy:</strong> Arkansas has no party registration, so the registration share is replaced by P = Democratic primary-ballot share (proxy — Arkansas has no party registration): Democratic U.S. Senate primary votes ÷ total primary ballots cast. Primary-proxy drop = P 2022 − P 2026, in points (negative where the proxy rose). 2026 general-election figures are UNOFFICIAL; this line should be re-fitted after certification.</p>
-<p><strong>What it means:</strong> across Arkansas's counties, each 1-point drop in the Democratic primary-proxy share goes with about 0.98 points of ΔG, starting from about +2.09 when the proxy does not change. Where the proxy rose, the drop is negative and ΔG falls by about the same amount. The fit explains about 90% of the county-to-county differences in ΔG. This line describes the county pattern; it does not prove anything.</p>
-<p><strong>Worked example: Pulaski</strong> (largest county). P went from 45.28 to 64.09, a primary-proxy drop of −18.8099 points (the proxy rose). Predicted ΔG = +2.0947 + 0.9792 × (−18.8099) = −16.32. Actual ΔG = −18.14. Difference from the fitted line (actual − predicted) = −1.82. This difference is not the line-11 residual in the template below, which is ΔG minus the proxy-share loss and applies only to counties that lost Democratic Senate-primary votes.</p>
-<h2>The equation</h2>
-<ul>
+<p dir="auto">Fitted by least squares across all 75 counties (n = 75): 2022 to 2026 governor race, ballots-cast denominator, locked gap formula. <strong>Proxy:</strong> Arkansas has no party registration, so the registration share is replaced by P = Democratic primary-ballot share (proxy — Arkansas has no party registration): Democratic U.S. Senate primary votes ÷ total primary ballots cast. Primary-proxy drop = P 2022 − P 2026, in points (negative where the proxy rose). 2026 general-election figures are UNOFFICIAL; this line should be re-fitted after certification.</p>
+<p dir="auto"><strong>What it means:</strong> across Arkansas's counties, each 1-point drop in the Democratic primary-proxy share goes with about 0.98 points of ΔG, starting from about +2.09 when the proxy does not change. Where the proxy rose, the drop is negative and ΔG falls by about the same amount. The fit explains about 90% of the county-to-county differences in ΔG. This line describes the county pattern; it does not prove anything.</p>
+<p dir="auto"><strong>Worked example: Pulaski</strong> (largest county). P went from 45.28 to 64.09, a primary-proxy drop of −18.8099 points (the proxy rose). Predicted ΔG = +2.0947 + 0.9792 × (−18.8099) = −16.32. Actual ΔG = −18.14. Difference from the fitted line (actual − predicted) = −1.82. This difference is not the line-11 residual in the template below, which is ΔG minus the proxy-share loss and applies only to counties that lost Democratic Senate-primary votes.</p>
+<h2 dir="auto">Share form: S = m × (D/100) + b</h2>
+<pre class="notranslate"><code class="notranslate">2022:              S = 57.97 × (D/100) + 17.57
+2026 (UNOFFICIAL): S = 58.97 × (D/100) + 17.63
+</code></pre>
+<ul dir="auto">
+<li><strong>S</strong> = Democratic governor votes ÷ total ballots cast × 100 (the county's Democratic share of ballots, %).</li>
+<li><strong>D</strong> = Democratic primary-share <strong>stand-in</strong>, not party registration: Democratic U.S. Senate primary votes ÷ total primary ballots cast × 100 (the same P used everywhere in this wiki). Arkansas has no party registration, so D is never an official registration share.</li>
+</ul>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>Item</th>
+<th>2022</th>
+<th>2026 (UNOFFICIAL)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Multiplier m (SE)</td>
+<td>57.97 (3.57)</td>
+<td>58.97 (3.17)</td>
+</tr>
+<tr>
+<td>Offset b (SE)</td>
+<td>+17.57 (0.89)</td>
+<td>+17.63 (0.91)</td>
+</tr>
+<tr>
+<td>R²</td>
+<td>0.783</td>
+<td>0.826</td>
+</tr>
+<tr>
+<td>Mean absolute residual (pts)</td>
+<td>3.98</td>
+<td>3.98</td>
+</tr>
+<tr>
+<td>Largest residual (pts)</td>
+<td>+16.53 (Pulaski)</td>
+<td>+15.54 (Dallas)</td>
+</tr>
+<tr>
+<td>RMSE (pts)</td>
+<td>5.21</td>
+<td>5.17</td>
+</tr>
+<tr>
+<td>n (counties)</td>
+<td>75</td>
+<td>75</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<p dir="auto">Fitted by least squares across all 75 counties, each weighted equally; residual = actual S − predicted S. <strong>This is the same line as the locked gap form below, rewritten.</strong> Because G = S − D, the gap-form constants G = m × (D/100) + b convert to the share form by adding 100 to m and keeping b: 2022 −42.03 + 100 = 57.97; 2026 −41.03 + 100 = 58.97. The residuals are identical in both forms, so the scatter points and fit lines on <a href="Graphs#5-forward-fit-arkansas-only-constants">Graphs</a> show the same county residuals. <strong>Do not plug the gap-form m (about −42) into the share form:</strong> that predicts S badly (mean absolute residual 18.11 points in 2022 and 21.42 in 2026).</p>
+<p dir="auto"><strong>Worked example: Pulaski.</strong> 2022: D = 45.28, predicted S = 57.9722 × 0.4528 + 17.5682 = 43.82; actual S = 60.34; residual +16.53. 2026: D = 64.09, predicted S = 58.9690 × 0.6409 + 17.6318 = 55.42; actual S = 61.01; residual +5.59.</p>
+<p dir="auto"><a target="_blank" rel="noopener noreferrer nofollow" href="https://raw.githubusercontent.com/mbenson8989/Arkansas-Election-Analysis/main/AR_Share_Form_S_vs_D_2022_2026.png"><img src="https://raw.githubusercontent.com/mbenson8989/Arkansas-Election-Analysis/main/AR_Share_Form_S_vs_D_2022_2026.png" alt="Share form: S vs D (Democratic primary-share stand-in) with the all-county least-squares line, 2022 and 2026 (2026 UNOFFICIAL)." style="max-width: 100%;"></a></p>
+<p dir="auto"><em>Share form: S vs D (Democratic primary-share stand-in) with the all-county least-squares line, 2022 and 2026 (2026 UNOFFICIAL).</em></p>
+<h2 dir="auto">The equation</h2>
+<ul dir="auto">
 <li><strong>S</strong> (Democratic vote share) = Democratic governor votes ÷ total ballots cast × 100. Ballots cast is the SOS county turnout figure.</li>
 <li><strong>P</strong> (Democratic primary-ballot share (proxy — Arkansas has no party registration)) = Democratic U.S. Senate primary votes ÷ total primary ballots cast × 100, from the same year's preferential primary (May 24, 2022; March 3, 2026).</li>
 <li><strong>G</strong> = S − P</li>
@@ -60,15 +118,15 @@ Four decimals:      ΔG = +2.0947 + 0.9792 × (Dem primary-proxy drop, points)
 <li><strong>Solved backward: implied extra votes</strong> = D2026 − (S2022 ÷ 100) × ballots2026</li>
 <li><strong>Primary-scaled gap</strong> (the Nebraska wiki's "gap in votes" line, for comparison) = D2026 − D2022 × (DemPrimary2026 ÷ DemPrimary2022)</li>
 </ul>
-<h3>Why this proxy</h3>
-<ul>
+<h3 dir="auto">Why this proxy</h3>
+<ul dir="auto">
 <li>Arkansas has no meaningful party registration to count: party choice on the registration form is optional, and the SOS publishes no registration totals by party.</li>
 <li>The SOS files give one ballots-cast figure per county for the whole primary (Democratic, Republican and nonpartisan judicial ballots together). They do not give ballots by party. The denominator is that total, so P is the Democratic share of <strong>all</strong> primary ballots.</li>
 <li>The numerator needs a Democratic contest that is statewide and contested in both years. The governor primary fails: the 2026 Republican governor primary was not on the ballot (Sanders was unopposed), and the SOS feed's 2022 Democratic governor primary is missing almost all of James "Rus" Russell's 6,421 votes. The Democratic U.S. Senate primary was contested statewide in both years (2022: James, Whitfield, Foster; 2026: Shoffner, Dunbar), and its statewide totals in the feed match the published results exactly (91,932 and 130,683).</li>
 <li>Senate-primary votes undercount Democratic ballots by the Democratic voters who skipped that race.</li>
 <li>Sensitivity: using the two-party Senate-primary share (Dem ÷ (Dem + Rep), South Carolina style) instead gives county ΔG values that correlate 0.992 with the main ones.</li>
 </ul>
-<h2>Blank template</h2>
+<h2 dir="auto">Blank template</h2>
 <markdown-accessiblity-table><table role="table">
 <thead>
 <tr>
@@ -171,7 +229,7 @@ Four decimals:      ΔG = +2.0947 + 0.9792 × (Dem primary-proxy drop, points)
 </tr>
 </tbody>
 </table></markdown-accessiblity-table>
-<h2>Worked example: Dallas (ceiling county, lost Democratic primary voters)</h2>
+<h2 dir="auto">Worked example: Dallas (ceiling county, lost Democratic primary voters)</h2>
 <markdown-accessiblity-table><table role="table">
 <thead>
 <tr>
@@ -274,8 +332,8 @@ Four decimals:      ΔG = +2.0947 + 0.9792 × (Dem primary-proxy drop, points)
 </tr>
 </tbody>
 </table></markdown-accessiblity-table>
-<h2>Arkansas-only constants (forward fit)</h2>
-<p>The forward surplus equation is fit by least squares across all 75 Arkansas counties, each county weighted equally: <strong>G = m × (P ÷ 100) + b</strong>. It uses Arkansas data only. No other state's constant is reused.</p>
+<h2 dir="auto">Arkansas-only constants (forward fit)</h2>
+<p dir="auto">The forward surplus equation is fit by least squares across all 75 Arkansas counties, each county weighted equally: <strong>G = m × (P ÷ 100) + b</strong>. It uses Arkansas data only. No other state's constant is reused. The same fit in share form (S = m × (D/100) + b, D = the primary-share stand-in) is in <a href="#share-form-s--m--d100--b">Share form</a> above.</p>
 <markdown-accessiblity-table><table role="table">
 <thead>
 <tr>
@@ -362,26 +420,26 @@ Four decimals:      ΔG = +2.0947 + 0.9792 × (Dem primary-proxy drop, points)
 </tr>
 </tbody>
 </table></markdown-accessiblity-table>
-<p><strong>The locked Arkansas constants are the all-county fits: 2022 m = −42.03, b = +17.57; 2026 m = −41.03, b = +17.63.</strong> The 2026 constant is built on UNOFFICIAL general-election figures and should be re-locked after certification. Narrowed fits leave out Chicot, Dallas, Desha, Franklin, Jefferson, Lee, Phillips, Pulaski, Sevier, Washington (see <a href="Floor-and-Ceiling#counties-narrowed-out-of-the-fit">Floor and Ceiling Counties</a>).</p>
-<ul>
+<p dir="auto"><strong>The locked Arkansas constants are the all-county fits: 2022 m = −42.03, b = +17.57; 2026 m = −41.03, b = +17.63.</strong> The 2026 constant is built on UNOFFICIAL general-election figures and should be re-locked after certification. Narrowed fits leave out Chicot, Dallas, Desha, Franklin, Jefferson, Lee, Phillips, Pulaski, Sevier, Washington (see <a href="Floor-and-Ceiling#counties-narrowed-out-of-the-fit">Floor and Ceiling Counties</a>).</p>
+<ul dir="auto">
 <li><strong>The 2022 and 2026 lines are almost the same.</strong> In a pooled model with year terms, the slope changes by +1.00 (p = 0.83) and the intercept by +0.06 (p = 0.96).</li>
 <li><strong>What m means.</strong> G already contains −P, so m = −100 would mean S does not move with P at all. Arkansas's m of −42.03 (2022) and −41.03 (2026) means S rises roughly 0.58 to 0.59 points for each point of proxy share. It is not an "injection multiplier."</li>
 <li><strong>Reverse-factoring constant across counties.</strong> Regressing ΔG on ΔP gives ΔG = −0.979 × ΔP + 2.09 (SE of intercept 0.33; R² 0.902; residual SE 2.66). A slope close to −1 means ΔG moves almost point for point, in the opposite direction, with ΔP. The intercept, <strong>+2.09 points</strong>, is the typical county rise in S once the proxy change is removed.</li>
 </ul>
-<h2>Rules for using this formula</h2>
-<ol>
+<h2 dir="auto">Rules for using this formula</h2>
+<ol dir="auto">
 <li><strong>Always label P as a proxy.</strong> Arkansas has no party registration. Every table and chart that uses P must say so.</li>
 <li><strong>If a county lost Democratic Senate-primary voters, run the residual step.</strong> In Arkansas that is 23 counties. The other 52 are <strong>non-loss counties</strong> and get raw numbers only.</li>
 <li><strong>The starting point is different in every state.</strong> Arkansas's constants come from Arkansas's own counties. Its P is a primary share, so its G values aren't comparable with states that have real party registration.</li>
 <li><strong>Always pull out the ceiling and floor counties.</strong> In Arkansas the ceiling county is Dallas (+39.53), and the lowest ΔG is Pulaski (−18.14). The floor (most Republican baseline) is Searcy, Newton, Cross, Prairie, Montgomery. See <a href="Floor-and-Ceiling">Floor and Ceiling Counties</a>.</li>
 <li><strong>Re-run after certification.</strong> The 2026 general figures are UNOFFICIAL.</li>
 </ol>
-<p><strong>Terms used in this wiki</strong> (full definitions on <a href="Floor-and-Ceiling#terminology">Floor and Ceiling Counties</a>):</p>
-<ul>
+<p dir="auto"><strong>Terms used in this wiki</strong> (full definitions on <a href="Floor-and-Ceiling#terminology">Floor and Ceiling Counties</a>):</p>
+<ul dir="auto">
 <li><strong>Ceiling counties</strong>: the five largest ΔG (Dallas, Sevier, St. Francis, Calhoun, Nevada).</li>
 <li><strong>Floor counties</strong>: the most Republican baseline, the five lowest 2022 proxy shares (Searcy, Newton, Cross, Prairie, Montgomery).</li>
 <li><strong>Non-loss counties</strong>: no drop in Democratic Senate-primary votes (52 counties). Raw numbers only.</li>
 <li><strong>Narrowed-out counties</strong>: counties that distort the fit (Chicot, Dallas, Desha, Franklin, Jefferson, Lee, Phillips, Pulaski, Sevier, Washington).</li>
 </ul>
 <hr>
-<p><strong>Related:</strong> <a href="Home">Home</a> · <a href="Reverse-Math">Bottom-Up Reverse Math</a> · <a href="Floor-and-Ceiling">Floor and Ceiling Counties</a> · <a href="Graphs">Graphs</a> · <a href="https://github.com/mbenson8989/Nebraska-Election-Analysis-/wiki/Cedar-Audit">Cedar County Audit (Nebraska)</a></p>
+<p dir="auto"><strong>Related:</strong> <a href="Home">Home</a> · <a href="Reverse-Math">Bottom-Up Reverse Math</a> · <a href="Floor-and-Ceiling">Floor and Ceiling Counties</a> · <a href="Graphs">Graphs</a> · <a href="https://github.com/mbenson8989/Nebraska-Election-Analysis-/wiki/Cedar-Audit">Cedar County Audit (Nebraska)</a></p>
